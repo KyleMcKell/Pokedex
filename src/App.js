@@ -17,8 +17,10 @@ const App = () => {
 				const response = await fetch(url);
 				const pokemon = await response.json();
 				setPokedex((pokedex) => pokedex.concat(pokemon));
+				if (i === pokemonPerPage) {
+					setLoading(false);
+				}
 			}
-			setLoading(false);
 		};
 		fetchData();
 	}, []);
@@ -44,6 +46,7 @@ const App = () => {
 				pokemonPerPage={pokemonPerPage}
 				totalPokemon={pokedex.length}
 				paginate={paginate}
+				currentPage={currentPage}
 			/>
 		</div>
 	);
