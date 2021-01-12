@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/component_styles/Pagination.css";
 
-export const Pagination = ({ pokemonPerPage, totalPokemon }) => {
+export const Pagination = ({ pokemonPerPage, totalPokemon, paginate }) => {
 	const pageNumbers = [];
 
 	for (let i = 1; i <= Math.ceil(totalPokemon / pokemonPerPage); i++) {
@@ -14,7 +14,11 @@ export const Pagination = ({ pokemonPerPage, totalPokemon }) => {
 				{pageNumbers.map((num) => {
 					return (
 						<li key={num} className="pagination__item">
-							<a href="!#" className="pagination__link">
+							<a
+								onClick={() => paginate(num)}
+								href="!#"
+								className="pagination__link"
+							>
 								{num}
 							</a>
 						</li>

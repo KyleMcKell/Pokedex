@@ -5,8 +5,8 @@ import { Pagination } from "./components/Pagination";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
-	const [currentPage] = useState(1);
-	const [pokemonPerPage] = useState(10);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [pokemonPerPage] = useState(9);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -23,13 +23,18 @@ const App = () => {
 		fetchData();
 	}, []);
 
-	// Get current posts
+	// Get current pokemon
 	const indexOfLastPokemon = currentPage * pokemonPerPage;
 	const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
 	const currentPokemons = pokedex.slice(
 		indexOfFirstPokemon,
 		indexOfLastPokemon
 	);
+
+	// Change page
+	const paginate = (pageNumber) => {
+		setCurrentPage(pageNumber);
+	};
 
 	return (
 		<div className="container">
@@ -38,6 +43,7 @@ const App = () => {
 			<Pagination
 				pokemonPerPage={pokemonPerPage}
 				totalPokemon={pokedex.length}
+				paginate={paginate}
 			/>
 		</div>
 	);
