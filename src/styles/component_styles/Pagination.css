@@ -19,7 +19,7 @@
 
 .pagination__item {
 	background-color: var(--nord3);
-	border: 1px gray solid;
+	border: 1px var(--nord5) solid;
 	border-radius: 5px;
 	width: 2rem;
 	height: 2rem;
@@ -38,4 +38,9 @@
 
 .pagination__item:hover {
 	cursor: pointer;
+	background-color: var(--nord5);
+}
+
+.pagination__link:hover {
+	color: var(--nord1);
 }
