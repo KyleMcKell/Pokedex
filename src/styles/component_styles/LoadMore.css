@@ -1,0 +1,28 @@
+@import "../Nord.css";
+
+.loadmore {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loadmore__btn {
+	margin-top: 2rem;
+	margin-bottom: 0.5rem;
+	background-color: var(--nord3);
+	border: 1px var(--nord9) solid;
+	border-radius: 5px;
+	color: var(--nord6);
+	padding: 1rem;
+	font-size: inherit;
+	box-shadow: 0px 0.2rem 0px var(--nord9);
+}
+
+.loadmore__btn:active {
+	box-shadow: 0px 0px 0px;
+	background-color: var(--nord1);
+	color: var(--nord4);
+	margin-top: 2.2rem;
+	margin-bottom: 0.3rem;
+	border-color: var(--nord1);
+}
