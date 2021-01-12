@@ -3,3 +3,19 @@
 .pokemon {
 	color: var(--nord4);
 }
+
+.pokemon__card {
+	display: flex;
+	margin: 1rem;
+	background-color: var(--nord2);
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 5px;
+	height: auto;
+}
+
+.pokemon__name {
+	text-transform: capitalize;
+	font-weight: bold;
+}
