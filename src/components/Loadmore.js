@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Loadmore = ({ indexOfLastPokemon, loadMore }) => {
-	return <button onClick={() => loadMore()}>Load More</button>;
+export const Loadmore = ({ loadMoreOnClick }) => {
+	return <button onClick={() => loadMoreOnClick()}>Load More</button>;
 };

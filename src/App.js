@@ -1,17 +1,15 @@
 import { Pokedex } from "./components/Pokedex";
 import "./styles/App.css";
-import { useEffect, useState, useCallback } from "react";
-import { Pagination } from "./components/Pagination";
+import { useEffect, useState } from "react";
+// import { Pagination } from "./components/Pagination";
 import { Loadmore } from "./components/Loadmore";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
-	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage] = useState(5);
+	// const [currentPage, setCurrentPage] = useState(1);
+	const [pokemonPerPage] = useState(20);
 	const [loading, setLoading] = useState(false);
-	const [loadedPokemon, setLoadedPokemon] = useState(
-		pokedex.slice(0, pokemonPerPage + 1)
-	);
+	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -21,27 +19,15 @@ const App = () => {
 				const response = await fetch(url);
 				const pokemon = await response.json();
 				setPokedex((pokedex) => pokedex.concat(pokemon));
-				if (i === pokemonPerPage) {
-					setLoading(false);
-				}
 			}
+			setLoading(false);
 		};
 		fetchData();
 	}, [pokemonPerPage]);
 
-	const loadMore = useCallback(() => {
-		const indexOfFirstPokemon = currentPage * pokemonPerPage;
-		const indexOfLastPokemon = loadedPokemon.length * pokemonPerPage;
-		const currentPokemons = pokedex.slice(
-			indexOfFirstPokemon - 1,
-			indexOfLastPokemon
-		);
-		setLoadedPokemon(currentPokemons);
-	}, [loadedPokemon.length, pokedex, pokemonPerPage, currentPage]);
-
-	useEffect(() => {
-		loadMore();
-	}, [loadMore]);
+	const loadMoreOnClick = () => {
+		setLoadedPokemon(pokedex.slice(0, loadedPokemon + pokemonPerPage).length);
+	};
 
 	// Get current pokemon
 
@@ -53,8 +39,11 @@ const App = () => {
 	return (
 		<div className="container">
 			<h1 className="title">Pokedex</h1>
-			<Pokedex pokedex={loadedPokemon} loading={loading} />
-			<Loadmore indexOfLastPokemon={loadedPokemon} loadMore={loadMore} />
+			<Pokedex pokedex={pokedex.slice(0, loadedPokemon)} loading={loading} />
+			<Loadmore
+				indexOfLastPokemon={loadedPokemon}
+				loadMoreOnClick={loadMoreOnClick}
+			/>
 			{/* <Pagination
 				pokemonPerPage={pokemonPerPage}
 				totalPokemon={pokedex.length}
