@@ -5,8 +5,8 @@ import { Pagination } from "./components/Pagination";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
-	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage, setPostsPerPage] = useState(10);
+	const [currentPage] = useState(1);
+	const [pokemonPerPage] = useState(10);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
