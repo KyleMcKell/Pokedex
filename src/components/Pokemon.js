@@ -17,9 +17,8 @@ export const Pokemon = ({ pokemon }) => {
 						className="pokemon__link"
 						target="_blank"
 					>
-						{pokemon.name}
+						{`${pokemon.id}: ${pokemon.name}`}
 					</a>
-					{pokemon.id}
 				</div>
 			</div>
 		</div>
