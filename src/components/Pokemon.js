@@ -19,6 +19,7 @@ export const Pokemon = ({ pokemon }) => {
 					>
 						{pokemon.name}
 					</a>
+					{pokemon.id}
 				</div>
 			</div>
 		</div>

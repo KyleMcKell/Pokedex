@@ -7,14 +7,14 @@ import { Loadmore } from "./components/Loadmore";
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage] = useState(10);
+	const [pokemonPerPage] = useState(25);
 	const [loading, setLoading] = useState(false);
 	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			setLoading(true);
-			for (let i = 1; i <= 151; i++) {
+			for (let i = 1; i <= 150; i++) {
 				const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
 				const response = await fetch(url);
 				const pokemon = await response.json();
@@ -26,15 +26,15 @@ const App = () => {
 	}, [pokemonPerPage]);
 
 	const loadMoreOnClick = () => {
-		setLoadedPokemon(pokedex.slice(0, loadedPokemon + pokemonPerPage).length);
+		setLoadedPokemon(loadedPokemon + pokemonPerPage);
 	};
 
 	// Get current pokemon
 
 	// Change page
 	const paginate = (pageNumber) => {
-		setCurrentPage(pageNumber);
 		setLoadedPokemon(pokemonPerPage);
+		setCurrentPage(pageNumber);
 	};
 
 	return (
@@ -43,7 +43,7 @@ const App = () => {
 			<Pokedex
 				pokedex={pokedex.slice(
 					currentPage * pokemonPerPage - pokemonPerPage,
-					loadedPokemon * currentPage
+					currentPage * pokemonPerPage - pokemonPerPage + loadedPokemon
 				)}
 				loading={loading}
 			/>
