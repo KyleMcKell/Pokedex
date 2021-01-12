@@ -2,7 +2,7 @@ import { Pokedex } from "./components/Pokedex";
 import "./styles/App.css";
 import { useEffect, useState } from "react";
 import { Pagination } from "./components/Pagination";
-import { Loadmore } from "./components/Loadmore";
+import { LoadMore } from "./components/LoadMore";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
@@ -14,7 +14,7 @@ const App = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			setLoading(true);
-			for (let i = 1; i <= 150; i++) {
+			for (let i = 1; i <= 151; i++) {
 				const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
 				const response = await fetch(url);
 				const pokemon = await response.json();
@@ -47,7 +47,7 @@ const App = () => {
 				)}
 				loading={loading}
 			/>
-			<Loadmore
+			<LoadMore
 				indexOfLastPokemon={loadedPokemon}
 				loadMoreOnClick={loadMoreOnClick}
 			/>
