@@ -19,3 +19,8 @@
 	text-transform: capitalize;
 	font-weight: bold;
 }
+
+.pokemon__link {
+	text-decoration: none;
+	color: var(--nord4);
+}
