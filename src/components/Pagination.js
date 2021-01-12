@@ -8,6 +8,10 @@ export const Pagination = ({ pokemonPerPage, totalPokemon, paginate }) => {
 		pageNumbers.push(i);
 	}
 
+	const handleClick = (num) => {
+		paginate(num);
+	};
+
 	return (
 		<nav className="pagination">
 			<ul className="pagination__list">
@@ -15,7 +19,7 @@ export const Pagination = ({ pokemonPerPage, totalPokemon, paginate }) => {
 					return (
 						<li key={num} className="pagination__item">
 							<a
-								onClick={() => paginate(num)}
+								onClick={() => handleClick(num)}
 								href="!#"
 								className="pagination__link"
 							>
