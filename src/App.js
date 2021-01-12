@@ -3,6 +3,7 @@ import "./styles/App.css";
 import { useEffect, useState } from "react";
 import { Pagination } from "./components/Pagination";
 import { LoadMore } from "./components/LoadMore";
+import { Loading } from "./components/Loading";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
@@ -37,28 +38,36 @@ const App = () => {
 		setCurrentPage(pageNumber);
 	};
 
-	return (
-		<div className="container">
-			<h1 className="title">Pokedex</h1>
-			<Pokedex
-				pokedex={pokedex.slice(
-					currentPage * pokemonPerPage - pokemonPerPage,
-					currentPage * pokemonPerPage - pokemonPerPage + loadedPokemon
-				)}
-				loading={loading}
-			/>
-			<LoadMore
-				indexOfLastPokemon={loadedPokemon}
-				loadMoreOnClick={loadMoreOnClick}
-			/>
-			<Pagination
-				pokemonPerPage={pokemonPerPage}
-				totalPokemon={pokedex.length}
-				paginate={paginate}
-				currentPage={currentPage}
-			/>
-		</div>
-	);
+	if (loading) {
+		return (
+			<div className="container">
+				<h1 className="title">Pokedex</h1>
+				<Loading />
+			</div>
+		);
+	} else {
+		return (
+			<div className="container">
+				<h1 className="title">Pokedex</h1>
+				<Pokedex
+					pokedex={pokedex.slice(
+						currentPage * pokemonPerPage - pokemonPerPage,
+						currentPage * pokemonPerPage - pokemonPerPage + loadedPokemon
+					)}
+				/>
+				<LoadMore
+					indexOfLastPokemon={loadedPokemon}
+					loadMoreOnClick={loadMoreOnClick}
+				/>
+				<Pagination
+					pokemonPerPage={pokemonPerPage}
+					totalPokemon={pokedex.length}
+					paginate={paginate}
+					currentPage={currentPage}
+				/>
+			</div>
+		);
+	}
 };
 
 export default App;

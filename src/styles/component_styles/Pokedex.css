@@ -5,7 +5,3 @@
 	width: 20vw;
 	border-radius: 10px;
 }
-
-.pokedex__loadingText {
-	color: var(--nord4);
-}

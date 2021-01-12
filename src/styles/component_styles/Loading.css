@@ -1,0 +1,5 @@
+@import "../Nord.css";
+
+.loading__loadingText {
+	color: var(--nord4);
+}
