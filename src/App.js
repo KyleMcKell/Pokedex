@@ -11,31 +11,41 @@ const App = () => {
 	const [pokemonPerPage] = useState(25);
 	const [loading, setLoading] = useState(false);
 	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
+	const [maxPokemon] = useState(151);
+	const [loadedPokemonIDs, setLoadedPokemonIDs] = useState([]);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			setLoading(true);
-			for (let i = 1; i <= 151; i++) {
-				const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-				const response = await fetch(url);
-				const pokemon = await response.json();
+	const fetchData = async (firstPokemonOnPage, amountOfPokemonOnPage) => {
+		for (let i = firstPokemonOnPage; i <= amountOfPokemonOnPage; i++) {
+			const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+			const response = await fetch(url);
+			const pokemon = await response.json();
+			if (loadedPokemonIDs.indexOf(pokemon.id) === -1) {
+				setLoadedPokemonIDs((ids) => ids.concat(pokemon.id));
 				setPokedex((pokedex) => pokedex.concat(pokemon));
 			}
-			setLoading(false);
-		};
-		fetchData();
+		}
+	};
+
+	useEffect(() => {
+		fetchData(1, pokemonPerPage);
 	}, [pokemonPerPage]);
 
 	const loadMoreOnClick = () => {
 		setLoadedPokemon(loadedPokemon + pokemonPerPage);
+		fetchData(
+			currentPage * pokemonPerPage - pokemonPerPage + 1 + loadedPokemon,
+			loadedPokemon + pokemonPerPage
+		);
 	};
-
-	// Get current pokemon
 
 	// Change page
 	const paginate = (pageNumber) => {
 		setLoadedPokemon(pokemonPerPage);
 		setCurrentPage(pageNumber);
+		fetchData(
+			currentPage * pokemonPerPage - pokemonPerPage + 1,
+			currentPage * pokemonPerPage
+		);
 	};
 
 	if (loading) {
@@ -49,6 +59,7 @@ const App = () => {
 		return (
 			<div className="container">
 				<h1 className="title">Pokedex</h1>
+				<h2 className="title">{`Page ${currentPage}`}</h2>
 				<Pokedex
 					pokedex={pokedex.slice(
 						currentPage * pokemonPerPage - pokemonPerPage,
@@ -61,7 +72,7 @@ const App = () => {
 				/>
 				<Pagination
 					pokemonPerPage={pokemonPerPage}
-					totalPokemon={pokedex.length}
+					totalPokemon={maxPokemon}
 					paginate={paginate}
 					currentPage={currentPage}
 				/>
