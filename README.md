@@ -8,6 +8,12 @@ Created with create-react-app
 
 If you’re on your journey to be a Pokémon master, nothing is going to be more useful than a Pokédex that allows you to identify and learn more about each Pokémon.
 
+## Purpose of Project
+
+- Interacting with an API with React Hooks
+- Component Communication
+- Pagination in React
+
 ## To Do
 
 - Add Load More Button
