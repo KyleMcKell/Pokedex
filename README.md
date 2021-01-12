@@ -10,9 +10,6 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 
 ## To Do
 
-- Create a new app
-- Fetch Pokemon data from PokeAPI
-- List out Pokemon
 - Add Load More Button
 - Fetch next page on click
 - Create page per Pokemon
