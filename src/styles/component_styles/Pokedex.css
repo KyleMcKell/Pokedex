@@ -1,0 +1,10 @@
+@import "../Nord.css";
+
+.pokedex {
+	display: flex;
+	background-color: var(--nord3);
+	width: auto;
+	flex-direction: column;
+	padding: 2rem;
+	border-radius: 10px;
+}

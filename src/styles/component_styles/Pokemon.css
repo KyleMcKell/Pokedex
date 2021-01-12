@@ -1,0 +1,5 @@
+@import "../Nord.css";
+
+.pokemon {
+	color: var(--nord4);
+}

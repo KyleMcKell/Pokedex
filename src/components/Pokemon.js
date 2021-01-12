@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import "../styles/component_styles/Pokemon.css";
 
 export const Pokemon = ({ pokemon }) => {
-	return <div>{pokemon.name}</div>;
+	return <div className="pokemon">{pokemon.name}</div>;
 };
