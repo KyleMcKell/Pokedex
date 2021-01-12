@@ -1,11 +1,12 @@
 import { Pokedex } from "./components/Pokedex";
 import "./styles/App.css";
 import { useEffect, useState } from "react";
+import { Pagination } from "./components/Pagination";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [postsPerPage, setPostsPerPage] = useState(10);
+	const [pokemonPerPage, setPostsPerPage] = useState(10);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
@@ -22,10 +23,22 @@ const App = () => {
 		fetchData();
 	}, []);
 
+	// Get current posts
+	const indexOfLastPokemon = currentPage * pokemonPerPage;
+	const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
+	const currentPokemons = pokedex.slice(
+		indexOfFirstPokemon,
+		indexOfLastPokemon
+	);
+
 	return (
 		<div className="container">
 			<h1 className="title">Pokedex</h1>
-			<Pokedex pokedex={pokedex} loading={loading} />
+			<Pokedex pokedex={currentPokemons} loading={loading} />
+			<Pagination
+				pokemonPerPage={pokemonPerPage}
+				totalPokemon={pokedex.length}
+			/>
 		</div>
 	);
 };
