@@ -1,13 +1,17 @@
 import { Pokedex } from "./components/Pokedex";
 import "./styles/App.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Pagination } from "./components/Pagination";
+import { Loadmore } from "./components/Loadmore";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [pokemonPerPage] = useState(20);
+	const [pokemonPerPage] = useState(5);
 	const [loading, setLoading] = useState(false);
+	const [loadedPokemon, setLoadedPokemon] = useState(
+		pokedex.slice(0, pokemonPerPage + 1)
+	);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -25,29 +29,38 @@ const App = () => {
 		fetchData();
 	}, [pokemonPerPage]);
 
+	const loadMore = useCallback(() => {
+		const indexOfFirstPokemon = currentPage * pokemonPerPage;
+		const indexOfLastPokemon = loadedPokemon.length * pokemonPerPage;
+		const currentPokemons = pokedex.slice(
+			indexOfFirstPokemon - 1,
+			indexOfLastPokemon
+		);
+		setLoadedPokemon(currentPokemons);
+	}, [loadedPokemon.length, pokedex, pokemonPerPage, currentPage]);
+
+	useEffect(() => {
+		loadMore();
+	}, [loadMore]);
+
 	// Get current pokemon
-	const indexOfLastPokemon = currentPage * pokemonPerPage;
-	const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
-	const currentPokemons = pokedex.slice(
-		indexOfFirstPokemon,
-		indexOfLastPokemon
-	);
 
 	// Change page
-	const paginate = (pageNumber) => {
-		setCurrentPage(pageNumber);
-	};
+	// const paginate = (pageNumber) => {
+	// 	setCurrentPage(pageNumber);
+	// };
 
 	return (
 		<div className="container">
 			<h1 className="title">Pokedex</h1>
-			<Pokedex pokedex={currentPokemons} loading={loading} />
-			<Pagination
+			<Pokedex pokedex={loadedPokemon} loading={loading} />
+			<Loadmore indexOfLastPokemon={loadedPokemon} loadMore={loadMore} />
+			{/* <Pagination
 				pokemonPerPage={pokemonPerPage}
 				totalPokemon={pokedex.length}
 				paginate={paginate}
 				currentPage={currentPage}
-			/>
+			/> */}
 		</div>
 	);
 };
