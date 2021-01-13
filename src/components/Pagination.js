@@ -1,4 +1,4 @@
-// Removed from project
+// Removed from project, added code originally from App.js to bottom of page
 
 import React from "react";
 import "../styles/component_styles/Pagination.css";
@@ -34,3 +34,33 @@ export const Pagination = ({ pokemonPerPage, totalPokemon, paginate }) => {
 		</nav>
 	);
 };
+
+// import { Pagination } from "./components/Pagination";
+// Removed Pagination from project
+// // Change page
+// const paginate = (pageNumber) => {
+// 	setLoadedPokemon(pokemonPerPage);
+// 	setCurrentPage(pageNumber);
+// 	fetchData(
+// 		currentPage * pokemonPerPage - pokemonPerPage + 1,
+// 		currentPage * pokemonPerPage
+// 	);
+// };
+/* 
+Removed Pagination from project, keeping here in case if want to reimplement later */
+/* 
+<Pagination
+	pokemonPerPage={pokemonPerPage}
+	totalPokemon={maxPokemon}
+	paginate={paginate}
+	currentPage={currentPage}
+/> 
+*/
+
+/* Removed Pagination from project
+const [maxPokemon] = useState(898);
+const [currentPage, setCurrentPage] = useState(1);*/
+
+/* <h2 className="title">{`Page ${currentPage}`}</h2> 
+				Removed Pagination
+				*/
