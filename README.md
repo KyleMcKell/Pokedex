@@ -13,11 +13,11 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 - Interacting with an API with React Hooks
 - Component Communication
 - Pagination in React
+- Infinite Scroll in React
 
 ## To Do
 
-- Add Load More Button
-- Fetch next page on click
+- Create infinite Scroll
 - Create page per Pokemon
 - Add link to Pokemon
 - Add Pokemon stats
