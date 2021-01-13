@@ -7,7 +7,7 @@ const App = () => {
 	const [pokedex, setPokedex] = useState([]);
 	const [pokemonPerPage] = useState(25);
 	const [isLoading, setIsLoading] = useState(false);
-	const [numLoadedPokemon, setNumLoadedPokemon] = useState(pokemonPerPage);
+	// const [numLoadedPokemon, setNumLoadedPokemon] = useState(pokemonPerPage);
 	// const [loadedPokemon, setLoadedPokemon] = useState([]);
 
 	useEffect(() => {
@@ -33,10 +33,10 @@ const App = () => {
 	};
 
 	const loadMorePokemon = () => {
-		setNumLoadedPokemon(numLoadedPokemon + pokemonPerPage);
+		// setNumLoadedPokemon(pokedex.length + pokemonPerPage);
 		fetchData(
-			pokemonPerPage - pokemonPerPage + 1 + numLoadedPokemon,
-			numLoadedPokemon + pokemonPerPage
+			pokemonPerPage - pokemonPerPage + 1 + pokedex.length,
+			pokedex.length + pokemonPerPage
 		);
 	};
 
