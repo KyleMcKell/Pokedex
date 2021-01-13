@@ -9,21 +9,20 @@ const App = () => {
 	const [pokedex, setPokedex] = useState([]);
 	const [pokemonPerPage] = useState(25);
 	const [loading, setLoading] = useState(false);
-	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
-	const [loadedPokemonIDs, setLoadedPokemonIDs] = useState([]);
+	const [numLoadedPokemon, setNumLoadedPokemon] = useState(pokemonPerPage);
+	const [loadedPokemon, setLoadedPokemon] = useState([]);
 	/* Removed Pagination from project
 	const [maxPokemon] = useState(898);
 	const [currentPage, setCurrentPage] = useState(1);*/
 
-	const fetchData = async (firstPokemonOnPage, amountOfPokemonOnPage) => {
-		for (let i = firstPokemonOnPage; i <= amountOfPokemonOnPage; i++) {
+	const fetchData = async (firstPokemonToLoad, amountOfPokemonOnPage) => {
+		for (let i = firstPokemonToLoad; i <= amountOfPokemonOnPage; i++) {
 			const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
 			const response = await fetch(url);
 			const pokemon = await response.json();
 			setLoading(true);
-			if (loadedPokemonIDs.indexOf(pokemon.id) === -1) {
-				setLoadedPokemonIDs((ids) => ids.concat(pokemon.id));
-				setPokedex((pokedex) => pokedex.concat(pokemon));
+			if (loadedPokemon.indexOf(pokemon) === -1) {
+				setLoadedPokemon((pokemons) => pokemons.concat(pokemon));
 			}
 			setLoading(false);
 		}
@@ -33,13 +32,32 @@ const App = () => {
 		fetchData(1, pokemonPerPage);
 	}, [pokemonPerPage]);
 
-	const loadMoreOnClick = () => {
-		setLoadedPokemon(loadedPokemon + pokemonPerPage);
+	const loadMorePokemon = () => {
+		setNumLoadedPokemon(numLoadedPokemon + pokemonPerPage * 2);
 		fetchData(
-			pokemonPerPage - pokemonPerPage + 1 + loadedPokemon,
-			loadedPokemon + pokemonPerPage
+			pokemonPerPage - pokemonPerPage + 1 + numLoadedPokemon,
+			numLoadedPokemon + pokemonPerPage * 2
 		);
 	};
+
+	const addToPokedex = (pokedexFragment) => {
+		pokedexFragment.forEach((pokemon) =>
+			setPokedex((pokedex) => pokedex.concat(pokemon))
+		);
+	};
+
+	const showMorePokemon = () => {
+		addToPokedex(
+			loadedPokemon.slice(
+				pokedex.length - 1,
+				pokedex.length - 1 + pokemonPerPage
+			)
+		);
+	};
+
+	useEffect(() => {
+		showMorePokemon();
+	}, [pokedex]);
 
 	// Removed Pagination from project
 	// // Change page
@@ -51,42 +69,27 @@ const App = () => {
 	// 		currentPage * pokemonPerPage
 	// 	);
 	// };
-
-	if (loading) {
-		return (
-			<div className="container">
-				<h1 className="title">Pokedex</h1>
-				<Loading />
-			</div>
-		);
-	} else {
-		return (
-			<div className="container">
-				<h1 className="title">Pokedex</h1>
-				{/* <h2 className="title">{`Page ${currentPage}`}</h2> 
+	return (
+		<div className="container">
+			<h1 className="title">Pokedex</h1>
+			{/* <h2 className="title">{`Page ${currentPage}`}</h2> 
 				Removed Pagination
 				*/}
-				<Pokedex
-					pokedex={pokedex.slice(
-						pokemonPerPage - pokemonPerPage,
-						pokemonPerPage - pokemonPerPage + loadedPokemon
-					)}
-				/>
-				<LoadMore
-					indexOfLastPokemon={loadedPokemon}
-					loadMoreOnClick={loadMoreOnClick}
-					pokemonToLoad={pokemonPerPage}
-				/>
-				{/* Removed Pagination from project, keeping here in case if want to reimplement later */}
-				{/* <Pagination
+			<Pokedex pokedex={pokedex} />
+			<LoadMore
+				loadMoreOnClick={loadMorePokemon}
+				showMorePokemon={showMorePokemon}
+				pokemonToLoad={pokemonPerPage}
+			/>
+			{/* Removed Pagination from project, keeping here in case if want to reimplement later */}
+			{/* <Pagination
 					pokemonPerPage={pokemonPerPage}
 					totalPokemon={maxPokemon}
 					paginate={paginate}
 					currentPage={currentPage}
 				/> */}
-			</div>
-		);
-	}
+		</div>
+	);
 };
 
 export default App;
