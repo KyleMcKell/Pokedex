@@ -1,3 +1,5 @@
+// Removed from project
+
 import React from "react";
 import "../styles/component_styles/Pagination.css";
 
