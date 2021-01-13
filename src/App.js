@@ -7,11 +7,12 @@ import { Loading } from "./components/Loading";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
-	const [currentPage /*setCurrentPage*/] = useState(1);
 	const [pokemonPerPage] = useState(25);
 	const [loading, setLoading] = useState(false);
 	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
-	// const [maxPokemon] = useState(898);
+	/* Removed Pagination from project
+	const [maxPokemon] = useState(898);
+	const [currentPage, setCurrentPage] = useState(1);*/
 	const [loadedPokemonIDs, setLoadedPokemonIDs] = useState([]);
 
 	const fetchData = async (firstPokemonOnPage, amountOfPokemonOnPage) => {
@@ -35,11 +36,12 @@ const App = () => {
 	const loadMoreOnClick = () => {
 		setLoadedPokemon(loadedPokemon + pokemonPerPage);
 		fetchData(
-			currentPage * pokemonPerPage - pokemonPerPage + 1 + loadedPokemon,
+			pokemonPerPage - pokemonPerPage + 1 + loadedPokemon,
 			loadedPokemon + pokemonPerPage
 		);
 	};
 
+	// Removed Pagination from project
 	// // Change page
 	// const paginate = (pageNumber) => {
 	// 	setLoadedPokemon(pokemonPerPage);
@@ -61,11 +63,13 @@ const App = () => {
 		return (
 			<div className="container">
 				<h1 className="title">Pokedex</h1>
-				<h2 className="title">{`Page ${currentPage}`}</h2>
+				{/* <h2 className="title">{`Page ${currentPage}`}</h2> 
+				Removed Pagination
+				*/}
 				<Pokedex
 					pokedex={pokedex.slice(
-						currentPage * pokemonPerPage - pokemonPerPage,
-						currentPage * pokemonPerPage - pokemonPerPage + loadedPokemon
+						pokemonPerPage - pokemonPerPage,
+						pokemonPerPage - pokemonPerPage + loadedPokemon
 					)}
 				/>
 				<LoadMore
@@ -73,6 +77,7 @@ const App = () => {
 					loadMoreOnClick={loadMoreOnClick}
 					pokemonToLoad={pokemonPerPage}
 				/>
+				{/* Removed Pagination from project, keeping here in case if want to reimplement later */}
 				{/* <Pagination
 					pokemonPerPage={pokemonPerPage}
 					totalPokemon={maxPokemon}
