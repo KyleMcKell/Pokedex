@@ -7,7 +7,7 @@ import { Loading } from "./components/Loading";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
-	const [currentPage, setCurrentPage] = useState(1);
+	const [currentPage /*setCurrentPage*/] = useState(1);
 	const [pokemonPerPage] = useState(25);
 	const [loading, setLoading] = useState(false);
 	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
@@ -19,10 +19,12 @@ const App = () => {
 			const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
 			const response = await fetch(url);
 			const pokemon = await response.json();
+			setLoading(true);
 			if (loadedPokemonIDs.indexOf(pokemon.id) === -1) {
 				setLoadedPokemonIDs((ids) => ids.concat(pokemon.id));
 				setPokedex((pokedex) => pokedex.concat(pokemon));
 			}
+			setLoading(false);
 		}
 	};
 
