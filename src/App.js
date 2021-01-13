@@ -10,10 +10,10 @@ const App = () => {
 	const [pokemonPerPage] = useState(25);
 	const [loading, setLoading] = useState(false);
 	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
+	const [loadedPokemonIDs, setLoadedPokemonIDs] = useState([]);
 	/* Removed Pagination from project
 	const [maxPokemon] = useState(898);
 	const [currentPage, setCurrentPage] = useState(1);*/
-	const [loadedPokemonIDs, setLoadedPokemonIDs] = useState([]);
 
 	const fetchData = async (firstPokemonOnPage, amountOfPokemonOnPage) => {
 		for (let i = firstPokemonOnPage; i <= amountOfPokemonOnPage; i++) {
