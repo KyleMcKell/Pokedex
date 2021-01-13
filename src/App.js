@@ -8,7 +8,7 @@ const App = () => {
 	const [pokemonPerPage] = useState(25);
 	const [isLoading, setIsLoading] = useState(false);
 	const [numLoadedPokemon, setNumLoadedPokemon] = useState(pokemonPerPage);
-	const [loadedPokemon, setLoadedPokemon] = useState([]);
+	// const [loadedPokemon, setLoadedPokemon] = useState([]);
 
 	useEffect(() => {
 		fetchData(1, pokemonPerPage);
@@ -21,12 +21,15 @@ const App = () => {
 			const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
 			const response = await fetch(url);
 			const pokemon = await response.json();
-			if (loadedPokemon.indexOf(pokemon) === -1) {
-				setLoadedPokemon((pokemons) => pokemons.concat(pokemon));
+			// if (loadedPokemon.indexOf(pokemon) === -1) {
+			// 	setLoadedPokemon((pokemons) => pokemons.concat(pokemon));
+			// }
+			if (pokedex.indexOf(pokemon) === -1) {
+				setPokedex((pokemons) => pokemons.concat(pokemon));
 			}
 		}
 		setIsLoading(false);
-		addToPokedex();
+		// addToPokedex();
 	};
 
 	const loadMorePokemon = () => {
@@ -37,17 +40,17 @@ const App = () => {
 		);
 	};
 
-	const addToPokedex = () => {
-		const pokedexFragment = loadedPokemon.slice(
-			pokedex.length,
-			pokedex.length + pokemonPerPage
-		);
-		pokedexFragment.forEach((pokemon) => {
-			if (pokedex.indexOf(pokemon) === -1) {
-				setPokedex((pokedex) => pokedex.concat(pokemon));
-			}
-		});
-	};
+	// const addToPokedex = () => {
+	// 	const pokedexFragment = loadedPokemon.slice(
+	// 		pokedex.length,
+	// 		pokedex.length + pokemonPerPage
+	// 	);
+	// 	pokedexFragment.forEach((pokemon) => {
+	// 		if (pokedex.indexOf(pokemon) === -1) {
+	// 			setPokedex((pokedex) => pokedex.concat(pokemon));
+	// 		}
+	// 	});
+	// };
 
 	return (
 		<div className="container">
