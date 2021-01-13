@@ -1,7 +1,7 @@
 import { Pokedex } from "./components/Pokedex";
 import "./styles/App.css";
 import { useEffect, useState } from "react";
-import { Pagination } from "./components/Pagination";
+// import { Pagination } from "./components/Pagination";
 import { LoadMore } from "./components/LoadMore";
 import { Loading } from "./components/Loading";
 
@@ -11,7 +11,7 @@ const App = () => {
 	const [pokemonPerPage] = useState(25);
 	const [loading, setLoading] = useState(false);
 	const [loadedPokemon, setLoadedPokemon] = useState(pokemonPerPage);
-	const [maxPokemon] = useState(151);
+	// const [maxPokemon] = useState(898);
 	const [loadedPokemonIDs, setLoadedPokemonIDs] = useState([]);
 
 	const fetchData = async (firstPokemonOnPage, amountOfPokemonOnPage) => {
@@ -38,15 +38,15 @@ const App = () => {
 		);
 	};
 
-	// Change page
-	const paginate = (pageNumber) => {
-		setLoadedPokemon(pokemonPerPage);
-		setCurrentPage(pageNumber);
-		fetchData(
-			currentPage * pokemonPerPage - pokemonPerPage + 1,
-			currentPage * pokemonPerPage
-		);
-	};
+	// // Change page
+	// const paginate = (pageNumber) => {
+	// 	setLoadedPokemon(pokemonPerPage);
+	// 	setCurrentPage(pageNumber);
+	// 	fetchData(
+	// 		currentPage * pokemonPerPage - pokemonPerPage + 1,
+	// 		currentPage * pokemonPerPage
+	// 	);
+	// };
 
 	if (loading) {
 		return (
@@ -69,13 +69,14 @@ const App = () => {
 				<LoadMore
 					indexOfLastPokemon={loadedPokemon}
 					loadMoreOnClick={loadMoreOnClick}
+					pokemonToLoad={pokemonPerPage}
 				/>
-				<Pagination
+				{/* <Pagination
 					pokemonPerPage={pokemonPerPage}
 					totalPokemon={maxPokemon}
 					paginate={paginate}
 					currentPage={currentPage}
-				/>
+				/> */}
 			</div>
 		);
 	}
