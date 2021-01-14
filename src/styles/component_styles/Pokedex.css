@@ -1,8 +1,13 @@
 @import "../Colors.css";
 
 .pokedex {
-	background-color: var(--nord3);
+	background-image: linear-gradient(
+		to right bottom,
+		var(--nord3),
+		var(--nord9)
+	);
 	width: 96vw;
+	border: 5px var(--nord1) solid;
 	border-radius: 10px;
 	text-align: center;
 }

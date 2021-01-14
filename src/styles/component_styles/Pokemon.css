@@ -11,18 +11,22 @@
 	margin: 1rem;
 	background-color: var(--nord2);
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
 	border-radius: 16px;
 	height: 6.4rem;
 	border: 0.3rem solid var(--nord0);
+	transition: 300ms height linear;
 }
 
 .pokemon__card:hover {
 	filter: brightness(1.15);
-	width: 16.1rem;
-	height: 5.9rem;
-	margin: 1.25rem;
+	height: 16rem;
+	align-items: flex-start;
+}
+
+.pokemon__data {
+	margin-top: 1rem;
 }
 
 .pokemon__id {
