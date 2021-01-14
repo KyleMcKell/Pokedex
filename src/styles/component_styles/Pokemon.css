@@ -1,4 +1,5 @@
 @import "../Colors.css";
+@import "./PokemonTypeColors.css";
 
 .pokemon {
 	color: var(--nord4);
@@ -25,4 +26,76 @@
 .pokemon__link {
 	text-decoration: none;
 	color: var(--nord4);
+}
+
+.normal {
+	background-color: var(--normal1);
+}
+
+.fighting {
+	background-color: var(--fighting1);
+}
+
+.flying {
+	background-color: var(--flying1);
+}
+
+.poison {
+	background-color: var(--poison1);
+}
+
+.ground {
+	background-color: var(--ground1);
+}
+
+.rock {
+	background-color: var(--rock1);
+}
+
+.bug {
+	background-color: var(--bug1);
+}
+
+.ghost {
+	background-color: var(--ghost1);
+}
+
+.steel {
+	background-color: var(--steel1);
+}
+
+.fire {
+	background-color: var(--fire1);
+}
+
+.water {
+	background-color: var(--water1);
+}
+
+.grass {
+	background-color: var(--grass1);
+}
+
+.electric {
+	background-color: var(--electric1);
+}
+
+.psychic {
+	background-color: var(--psychic1);
+}
+
+.ice {
+	background-color: var(--ice1);
+}
+
+.dragon {
+	background-color: var(--dragon1);
+}
+
+.dark {
+	background-color: var(--dark1);
+}
+
+.fairy {
+	background-color: var(--fairy1);
 }
