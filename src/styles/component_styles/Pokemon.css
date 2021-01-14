@@ -2,20 +2,27 @@
 @import "./PokemonTypeColors.css";
 
 .pokemon {
-	color: var(--nord2);
 	display: inline-block;
 }
 
 .pokemon__card {
-	width: 17.2rem;
+	width: 16.6rem;
 	display: flex;
 	margin: 1rem;
 	background-color: var(--nord2);
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
 	border-radius: 5px;
-	height: 7rem;
+	height: 6.4rem;
+	border: 0.3rem solid var(--nord0);
+}
+
+.pokemon__card:hover {
+	opacity: 90%;
+	width: 16.1rem;
+	height: 5.9rem;
+	margin: 1.25rem;
 }
 
 .pokemon__name {
@@ -28,8 +35,8 @@
 	color: var(--nord0);
 }
 
-.pokemon__link:hover {
-	color: var(--nord3);
+.pokemon__sprite {
+	height: auto;
 }
 
 .pokemon--normal {
