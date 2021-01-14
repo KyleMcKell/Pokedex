@@ -12,7 +12,7 @@
 	background-color: var(--nord2);
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
 	border-radius: 16px;
 	height: 6.4rem;
 	border: 0.3rem solid var(--nord0);
@@ -47,6 +47,7 @@
 
 .pokemon__sprite {
 	height: auto;
+	margin-right: 1.5rem;
 }
 
 .pokemon--normal {
