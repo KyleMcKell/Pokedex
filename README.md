@@ -13,6 +13,7 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 - Interacting with an API with React Hooks
 - Component Communication
 - Infinite Scroll in React
+- Promises, promises, promises, promises!
 - (Commented Out) Pagination in React
 
 ## To Do
