@@ -1,4 +1,4 @@
-@import "../Nord.css";
+@import "../Colors.css";
 
 .pokedex {
 	background-color: var(--nord3);

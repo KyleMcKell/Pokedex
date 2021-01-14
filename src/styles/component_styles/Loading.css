@@ -1,4 +1,4 @@
-@import "../Nord.css";
+@import "../Colors.css";
 
 .loading__loadingText {
 	color: var(--nord4);

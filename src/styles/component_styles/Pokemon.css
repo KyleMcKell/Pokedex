@@ -1,4 +1,4 @@
-@import "../Nord.css";
+@import "../Colors.css";
 
 .pokemon {
 	color: var(--nord4);
