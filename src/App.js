@@ -7,22 +7,16 @@ const App = () => {
 	const [pokedex, setPokedex] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const POKEMON_IN_DEX = 898;
-	const POKEMON_PER_LOAD = 25;
+	const POKEMON_IN_DEX = 151;
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const arrSize =
-				pokedex.length + POKEMON_PER_LOAD <= POKEMON_IN_DEX
-					? POKEMON_PER_LOAD
-					: POKEMON_IN_DEX - pokedex.length;
-
 			setIsLoading(true);
-			const pokeArr = new Array(arrSize).fill("").map((pokemon, index) => {
-				return `https://pokeapi.co/api/v2/pokemon/${
-					index + pokedex.length + 1
-				}`;
-			});
+			const pokeArr = new Array(POKEMON_IN_DEX)
+				.fill("")
+				.map((pokemon, index) => {
+					return `https://pokeapi.co/api/v2/pokemon/${index + 1}`;
+				});
 			try {
 				const resolvedFetch = await Promise.all(
 					pokeArr.map((url) => fetch(url))
