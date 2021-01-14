@@ -2,7 +2,7 @@
 @import "./PokemonTypeColors.css";
 
 .pokemon {
-	color: var(--nord4);
+	color: var(--nord2);
 	display: inline-block;
 }
 
@@ -25,77 +25,81 @@
 
 .pokemon__link {
 	text-decoration: none;
-	color: var(--nord4);
+	color: var(--nord0);
 }
 
-.normal {
+.pokemon__link:hover {
+	color: var(--nord3);
+}
+
+.pokemon--normal {
 	background-color: var(--normal1);
 }
 
-.fighting {
+.pokemon--fighting {
 	background-color: var(--fighting1);
 }
 
-.flying {
+.pokemon--flying {
 	background-color: var(--flying1);
 }
 
-.poison {
+.pokemon--poison {
 	background-color: var(--poison1);
 }
 
-.ground {
+.pokemon--ground {
 	background-color: var(--ground1);
 }
 
-.rock {
+.pokemon--rock {
 	background-color: var(--rock1);
 }
 
-.bug {
+.pokemon--bug {
 	background-color: var(--bug1);
 }
 
-.ghost {
+.pokemon--ghost {
 	background-color: var(--ghost1);
 }
 
-.steel {
+.pokemon--steel {
 	background-color: var(--steel1);
 }
 
-.fire {
+.pokemon--fire {
 	background-color: var(--fire1);
 }
 
-.water {
+.pokemon--water {
 	background-color: var(--water1);
 }
 
-.grass {
+.pokemon--grass {
 	background-color: var(--grass1);
 }
 
-.electric {
+.pokemon--electric {
 	background-color: var(--electric1);
 }
 
-.psychic {
+.pokemon--psychic {
 	background-color: var(--psychic1);
 }
 
-.ice {
+.pokemon--ice {
 	background-color: var(--ice1);
 }
 
-.dragon {
+.pokemon--dragon {
 	background-color: var(--dragon1);
 }
 
-.dark {
+.pokemon--dark {
 	background-color: var(--dark1);
 }
 
-.fairy {
+.pokemon--fairy {
 	background-color: var(--fairy1);
 }

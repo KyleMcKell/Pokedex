@@ -5,10 +5,10 @@ import "../styles/component_styles/Pokemon.css";
 export const Pokemon = ({ pokemon }) => {
 	return (
 		<div className="pokemon">
-			<div className="pokemon__card">
+			<div className={`pokemon__card pokemon--${pokemon.types["0"].type.name}`}>
 				<img
 					src={pokemon.sprites.front_default}
-					className="pokemon__sprite"
+					className={`pokemon__sprite`}
 					alt={pokemon.name}
 				/>
 				<div className="pokemon__name">
