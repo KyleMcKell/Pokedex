@@ -12,8 +12,8 @@
 	background-color: var(--nord2);
 	flex-direction: row;
 	align-items: center;
-	justify-content: center;
-	border-radius: 5px;
+	justify-content: space-evenly;
+	border-radius: 16px;
 	height: 6.4rem;
 	border: 0.3rem solid var(--nord0);
 }
@@ -25,9 +25,19 @@
 	margin: 1.25rem;
 }
 
+.pokemon__id {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
 .pokemon__name {
 	text-transform: capitalize;
 	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+.pokemon__hr {
+	width: 4rem;
 }
 
 .pokemon__link {

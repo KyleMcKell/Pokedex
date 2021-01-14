@@ -18,8 +18,10 @@ export const Pokemon = ({ pokemon }) => {
 						className={`pokemon__sprite`}
 						alt={pokemon.name}
 					/>
-					<div className="pokemon__name">
-						{`${pokemon.id}: ${pokemon.name}`}
+					<div className="pokemon__data">
+						<div className="pokemon__id">{`${pokemon.id}`}</div>
+						<hr class="pokemon__hr" />
+						<div className="pokemon__name">{`${pokemon.name}`}</div>
 					</div>
 				</div>
 			</a>
