@@ -20,8 +20,8 @@
 
 .pokemon__card--active {
 	filter: brightness(1.15);
-	height: 16rem;
 	align-items: flex-start;
+	/* height: 16rem; */
 }
 
 .pokemon__data {
