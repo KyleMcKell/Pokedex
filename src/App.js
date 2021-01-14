@@ -11,7 +11,7 @@ const App = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			setIsLoading(true);
-			const pokeArr = new Array(898).fill("").map((pokemon, index) => {
+			const pokeArr = new Array(maxPokemon).fill("").map((pokemon, index) => {
 				return `https://pokeapi.co/api/v2/pokemon/${index + 1}`;
 			});
 			try {
