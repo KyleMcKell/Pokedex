@@ -18,7 +18,6 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 
 ## To Do
 
-- Create infinite Scroll
 - Create page per Pokemon
 - Add link to Pokemon
 - Add Pokemon stats
