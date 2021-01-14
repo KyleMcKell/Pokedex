@@ -1,7 +1,7 @@
 import { Pokedex } from "./components/Pokedex";
 import "./styles/App.css";
 import { useEffect, useState } from "react";
-import { LoadMore } from "./components/LoadMore";
+import { Loading } from "./components/Loading";
 
 const App = () => {
 	const [pokedex, setPokedex] = useState([]);
@@ -11,32 +11,31 @@ const App = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			setIsLoading(true);
-			for (let i = 1; i <= maxPokemon; i++) {
-				const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-				const response = await fetch(url);
-				const pokemon = await response.json();
-				if (pokedex.indexOf(pokemon) === -1) {
-					setPokedex((pokemons) => pokemons.concat(pokemon));
-				}
+			const pokeArr = new Array(898).fill("").map((pokemon, index) => {
+				return `https://pokeapi.co/api/v2/pokemon/${index + 1}`;
+			});
+			try {
+				// const fetchArr = pokeArr.map((url) => fetch(url));
+				const resolvedFetch = await Promise.all(
+					pokeArr.map((url) => fetch(url))
+				);
+				const response = await Promise.all(
+					resolvedFetch.map((pokemonRes) => pokemonRes.json())
+				);
+				setPokedex((pokedex) => pokedex.concat(response));
+				setIsLoading(false);
+			} catch (err) {
+				console.log(err);
 			}
-			setIsLoading(false);
 		};
 		fetchData();
 	}, [maxPokemon]);
-
-	// const loadMorePokemon = () => {
-	// 	fetchData();
-	// };
 
 	return (
 		<div className="container">
 			<h1 className="title">Pokedex</h1>
 			<Pokedex pokedex={pokedex} />
-			<LoadMore
-				// loadMoreOnClick={loadMorePokemon}
-				pokemonToLoad={maxPokemon}
-				isLoading={isLoading}
-			/>
+			<Loading isLoading={isLoading} />
 		</div>
 	);
 };
