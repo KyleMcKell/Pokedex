@@ -40,7 +40,7 @@ export const Pokemon = ({ name, types, id, sprite }) => {
 					<div className="pokemon__data">
 						<div className="pokemon__id">{`${id}`}</div>
 						<hr class="pokemon__hr" />
-						<div className="pokemon__name">{`${name}`}</div>
+						<div className="pokemon__name">{`${name.split("-")[0]}`}</div>
 					</div>
 				</div>
 			</a>

@@ -7,7 +7,7 @@ const App = () => {
 	const [pokedex, setPokedex] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
-	const POKEMON_IN_DEX = 151;
+	const POKEMON_IN_DEX = 721;
 
 	useEffect(() => {
 		const fetchData = async () => {
