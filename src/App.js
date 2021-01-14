@@ -37,7 +37,7 @@ const App = () => {
 			}
 		};
 		fetchData();
-	}, [pokedex]);
+	}, []);
 
 	return (
 		<div className="container">
