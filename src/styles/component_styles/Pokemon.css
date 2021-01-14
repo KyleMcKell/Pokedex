@@ -2,9 +2,11 @@
 
 .pokemon {
 	color: var(--nord4);
+	display: inline-block;
 }
 
 .pokemon__card {
+	width: 17.2rem;
 	display: flex;
 	margin: 1rem;
 	background-color: var(--nord2);

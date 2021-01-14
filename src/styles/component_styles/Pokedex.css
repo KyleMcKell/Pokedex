@@ -2,6 +2,7 @@
 
 .pokedex {
 	background-color: var(--nord3);
-	width: 20vw;
+	width: 96vw;
 	border-radius: 10px;
+	text-align: center;
 }
