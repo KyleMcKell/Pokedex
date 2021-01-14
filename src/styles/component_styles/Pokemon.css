@@ -19,7 +19,7 @@
 }
 
 .pokemon__card:hover {
-	opacity: 90%;
+	filter: brightness(1.15);
 	width: 16.1rem;
 	height: 5.9rem;
 	margin: 1.25rem;
