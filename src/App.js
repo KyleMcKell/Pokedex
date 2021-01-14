@@ -15,7 +15,6 @@ const App = () => {
 				return `https://pokeapi.co/api/v2/pokemon/${index + 1}`;
 			});
 			try {
-				// const fetchArr = pokeArr.map((url) => fetch(url));
 				const resolvedFetch = await Promise.all(
 					pokeArr.map((url) => fetch(url))
 				);
