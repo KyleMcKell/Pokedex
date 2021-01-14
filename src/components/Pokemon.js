@@ -24,9 +24,7 @@ export const Pokemon = ({ name, types, id, sprite }) => {
 				target="_blank"
 				rel="noreferrer"
 			>
-				<div
-					className={`pokemon__card pokemon--${types["0"].type.name} pokemon--${id}`}
-				>
+				<div className={`pokemon__card pokemon--${id}`}>
 					<img src={sprite} className={`pokemon__sprite`} alt={name} />
 					<div className="pokemon__data">
 						<div className="pokemon__id">{`${id}`}</div>
