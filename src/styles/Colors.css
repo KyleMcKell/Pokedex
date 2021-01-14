@@ -1,5 +1,5 @@
 :root {
-	/* theme colors */
+	/* Theme colors */
 	--nord0: #2e3440;
 	--nord1: #3b4252;
 	--nord2: #434c5e;
@@ -16,6 +16,4 @@
 	--nord13: #ebcb8b;
 	--nord14: #a3be8c;
 	--nord15: #b48ead;
-
-	/* type colors */
 }
