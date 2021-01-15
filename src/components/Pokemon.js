@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import "../styles/component_styles/Pokemon.css";
 
+// returns a pokemon card with identifiers for each pokemon
 export const Pokemon = ({ name, types, id, sprite }) => {
-	// get the pokemon from the document
-
+	// adding a few event listeners for hovering/activity and changing style of background
 	useEffect(() => {
 		// make an array of the types passed from props
 		const typeArr = [];
@@ -19,6 +19,7 @@ export const Pokemon = ({ name, types, id, sprite }) => {
 				? `linear-gradient(to right, var(--${typeArr[0]}1), var(--${typeArr[1]}1)`
 				: `linear-gradient(var(--${typeArr[0]}1), var(--${typeArr[0]}1)`;
 
+		// on hover, add the active class, and take it away when hovering stops
 		pokemon.addEventListener("mouseover", () => {
 			pokemon.classList.add("pokemon__card--active");
 		});
@@ -29,12 +30,14 @@ export const Pokemon = ({ name, types, id, sprite }) => {
 
 	return (
 		<div className={`pokemon`}>
+			{/* provide a link to bulbapedia, a pokemon wiki, to be replaced with my own pages */}
 			<a
 				href={`https://bulbapedia.bulbagarden.net/wiki/${name}_(Pok%C3%A9mon)`}
 				className="pokemon__link"
 				target="_blank"
 				rel="noreferrer"
 			>
+				{/* displays the pokemon card */}
 				<div className={`pokemon__card pokemon--${id}`}>
 					<img src={sprite} className={`pokemon__sprite`} alt={name} />
 					<div className="pokemon__data">
