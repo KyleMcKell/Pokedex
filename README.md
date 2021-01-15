@@ -20,5 +20,8 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 ## To Do
 
 - Create page per Pokemon
-- Add link to Pokemon
 - Add Pokemon stats
+
+## Where we left off
+
+- Creating ID Page for each pokemon
