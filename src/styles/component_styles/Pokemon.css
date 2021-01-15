@@ -5,6 +5,7 @@
 	display: inline-block;
 }
 
+/* defining the card of each pokemon */
 .pokemon__card {
 	width: 16.6rem;
 	display: flex;
@@ -18,12 +19,14 @@
 	transition: 300ms height linear;
 }
 
+/* is put onto a card when it is activated */
 .pokemon__card--active {
 	filter: brightness(1.15);
 	align-items: flex-start;
 	/* height: 16rem; */
 }
 
+/* div holding id, name, etc. */
 .pokemon__data {
 	margin-top: 1rem;
 }
