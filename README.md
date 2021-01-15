@@ -15,6 +15,7 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 - Infinite Scroll in React
 - Promises, promises, promises, promises!
 - (Commented Out) Pagination in React
+- Adding event listeners in React
 
 ## To Do
 

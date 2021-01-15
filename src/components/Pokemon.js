@@ -1,32 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/component_styles/Pokemon.css";
+import "../styles/component_styles/PokemonTypeColors.css";
 
 // returns a pokemon card with identifiers for each pokemon
 export const Pokemon = ({ name, types, id, sprite }) => {
-	// adding a few event listeners for hovering/activity and changing style of background
+	const [background, setBackground] = useState("");
+
 	useEffect(() => {
-		// make an array of the types passed from props
 		const typeArr = [];
+
 		for (const type of types) {
 			if (type.type.name != null) {
 				typeArr.push(type.type.name);
 			}
 		}
-		const pokemon = document.querySelector(`.pokemon--${id}`);
-		// set a gradient background for the types of the pokemon
-		pokemon.style.backgroundImage =
+
+		setBackground(
 			typeArr.length > 1
 				? `linear-gradient(to right, var(--${typeArr[0]}1), var(--${typeArr[1]}1)`
-				: `linear-gradient(var(--${typeArr[0]}1), var(--${typeArr[0]}1)`;
-
-		// on hover, add the active class, and take it away when hovering stops
-		pokemon.addEventListener("mouseover", () => {
-			pokemon.classList.add("pokemon__card--active");
-		});
-		pokemon.addEventListener("mouseout", () => {
-			pokemon.classList.remove("pokemon__card--active");
-		});
-	}, [id, types]);
+				: `linear-gradient(var(--${typeArr[0]}1), var(--${typeArr[0]}1)`
+		);
+	}, [types]);
 
 	return (
 		<div className={`pokemon`}>
@@ -38,11 +32,14 @@ export const Pokemon = ({ name, types, id, sprite }) => {
 				rel="noreferrer"
 			>
 				{/* displays the pokemon card */}
-				<div className={`pokemon__card pokemon--${id}`}>
+				<div
+					className={`pokemon__card pokemon--${id}`}
+					style={{ backgroundImage: background }}
+				>
 					<img src={sprite} className={`pokemon__sprite`} alt={name} />
 					<div className="pokemon__data">
 						<div className="pokemon__id">{`${id}`}</div>
-						<hr class="pokemon__hr" />
+						<hr className="pokemon__hr" />
 						<div className="pokemon__name">{`${name.split("-")[0]}`}</div>
 					</div>
 				</div>
