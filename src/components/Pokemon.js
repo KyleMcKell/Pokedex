@@ -8,13 +8,11 @@ export const Pokemon = ({ name, types, id, sprite }) => {
 
 	useEffect(() => {
 		const typeArr = [];
-
 		for (const type of types) {
 			if (type.type.name != null) {
 				typeArr.push(type.type.name);
 			}
 		}
-
 		setBackground(
 			typeArr.length > 1
 				? `linear-gradient(to right, var(--${typeArr[0]}1), var(--${typeArr[1]}1)`
