@@ -42,10 +42,6 @@
 	font-size: 1.25rem;
 }
 
-.pokemon__hr {
-	width: 4rem;
-}
-
 .pokemon__link {
 	text-decoration: none;
 	color: var(--nord0);
@@ -56,10 +52,6 @@
 	margin-right: 1.5rem;
 }
 
-.pokemon__button {
-	color: var(--nord0);
-	border: none;
-	background: none;
-	margin: 0;
-	padding: 0;
+.pokemon__hr {
+	width: 4rem;
 }

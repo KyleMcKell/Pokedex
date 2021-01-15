@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/component_styles/Pokemon.css";
 import "../styles/component_styles/PokemonTypeColors.css";
 
@@ -22,13 +23,10 @@ export const Pokemon = ({ name, types, dexNumber, sprite }) => {
 		);
 	}, [types]);
 
-	const handleCardClick = () => {};
-
 	return (
 		<div className={`pokemon`}>
-			{/* provide a link to bulbapedia, a pokemon wiki, to be replaced with my own pages */}
-			<button className="pokemon__button" onClick={handleCardClick}>
-				{/* displays the pokemon card */}
+			{/* Routes to  */}
+			<Link to={`/pokemon/${dexNumber}`} className="pokemon__link">
 				<div
 					className={`pokemon__card pokemon--${dexNumber}`}
 					style={{ backgroundImage: background }}
@@ -40,7 +38,7 @@ export const Pokemon = ({ name, types, dexNumber, sprite }) => {
 						<div className="pokemon__name">{`${name.split("-")[0]}`}</div>
 					</div>
 				</div>
-			</button>
+			</Link>
 		</div>
 	);
 };
