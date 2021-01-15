@@ -1,5 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Pokemon } from "./Pokemon";
+import { Link } from "react-router-dom";
+import "../styles/component_styles/PokemonInfo.css";
 
 export const PokemonInfo = ({ match }) => {
-	return <div>post {match.params.dexNumber}</div>;
+	const [pokemon, setPokemon] = useState();
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await fetch(
+				`https://pokeapi.co/api/v2/pokemon/${match.params.dexNumber}`
+			);
+			const json = await response.json();
+			setPokemon(json);
+		};
+		fetchData();
+	}, [match.params.dexNumber]);
+
+	if (pokemon) {
+		return (
+			<div>
+				<h1>hi</h1>
+				<p>post {pokemon.name}</p>
+				<Pokemon
+					dexNumber={pokemon.id} // pokemon's dex number
+					types={pokemon.types} // pokemon's types, an object
+					name={pokemon.name} // name of the pokemon
+					sprite={pokemon.sprites.front_default} // image of pokemon
+				/>
+				<Link to={`/`} className="pokemon-info--link">
+					Go home
+				</Link>
+			</div>
+		);
+	} else {
+		return "";
+	}
 };
