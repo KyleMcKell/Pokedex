@@ -48,7 +48,7 @@ export const Pokedex = () => {
 			<div className="pokedex">
 				{pokedex.map((pokemon) => (
 					<Pokemon
-						id={pokemon.id} // pokemon's dex number
+						dexNumber={pokemon.id} // pokemon's dex number
 						key={pokemon.id} // key for React, each dex number is unique
 						types={pokemon.types} // pokemon's types, an object
 						name={pokemon.name} // name of the pokemon
