@@ -4,7 +4,7 @@ import "../styles/component_styles/Pokemon.css";
 import "../styles/component_styles/PokemonTypeColors.css";
 
 // returns a pokemon card with identifiers for each pokemon
-export const Pokemon = ({ name, types, dexNumber, sprite }) => {
+export const PokemonDexCard = ({ name, types, dexNumber, sprite }) => {
 	const [background, setBackground] = useState("");
 
 	//sets the background to a gradient of the two types that the pokemon has

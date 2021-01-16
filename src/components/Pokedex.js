@@ -1,5 +1,5 @@
 import "../styles/component_styles/Pokedex.css";
-import { Pokemon } from "./Pokemon";
+import { PokemonDexCard } from "./PokemonDexCard";
 import { Loading } from "./Loading";
 import { useEffect, useState } from "react";
 
@@ -47,7 +47,7 @@ export const Pokedex = () => {
 			<h1 className="title">Pokedex</h1>
 			<div className="pokedex">
 				{pokedex.map((pokemon) => (
-					<Pokemon
+					<PokemonDexCard
 						dexNumber={pokemon.id} // pokemon's dex number
 						key={pokemon.id} // key for React, each dex number is unique
 						types={pokemon.types} // pokemon's types, an object

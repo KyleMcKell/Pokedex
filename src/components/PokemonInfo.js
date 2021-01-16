@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Pokemon } from "./Pokemon";
+import { PokemonDexCard } from "./PokemonDexCard";
 import { Link } from "react-router-dom";
 import "../styles/component_styles/PokemonInfo.css";
 
@@ -19,10 +19,8 @@ export const PokemonInfo = ({ match }) => {
 
 	if (pokemon) {
 		return (
-			<div>
-				<h1>hi</h1>
-				<p>post {pokemon.name}</p>
-				<Pokemon
+			<div class="">
+				<PokemonDexCard
 					dexNumber={pokemon.id} // pokemon's dex number
 					types={pokemon.types} // pokemon's types, an object
 					name={pokemon.name} // name of the pokemon
