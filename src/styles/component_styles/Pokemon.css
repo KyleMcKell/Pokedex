@@ -23,7 +23,7 @@
 .pokemon__card:hover {
 	filter: brightness(1.15);
 	align-items: flex-start;
-	height: 10rem;
+	/* height: 10rem; */
 }
 
 /* div holding id, name, etc. */
@@ -31,27 +31,32 @@
 	margin-top: 1rem;
 }
 
+/* pokemon's pokedex number */
 .pokemon__id {
 	font-weight: bold;
 	font-size: 1.1rem;
 }
 
+/* the pokemon's name */
 .pokemon__name {
 	text-transform: capitalize;
 	font-weight: bold;
 	font-size: 1.25rem;
 }
 
+/* make it so the link tag doesn't give any lines or general link aesthetic */
 .pokemon__link {
 	text-decoration: none;
 	color: var(--nord0);
 }
 
+/* pokemon's picture/sprite */
 .pokemon__sprite {
 	height: auto;
 	margin-right: 1.5rem;
 }
 
+/* line between the pokemon's dex number and name */
 .pokemon__hr {
 	width: 4rem;
 }
