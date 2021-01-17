@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/component_styles/PokemonInfoCard.css";
+import { StatChart } from "./StatChart";
 
 export const PokemonInfoCard = ({
 	pokemon,
@@ -61,28 +62,26 @@ export const PokemonInfoCard = ({
 				<div className="pokemon-info-card__info">
 					{/* dex number and name */}
 					<div className="pokemon-info-card__id">
-						<h1 className="pokemon-info-card__name">{name}</h1>
-						<h2>{dexNumber}</h2>
+						<h1 className="pokemon-info-card__name">{`${dexNumber}: ${name}`}</h1>
 					</div>
 					{/* pokemon's types */}
 					<div className="pokemon-info-card__types">
 						{types.map((type) => (
-							<div key={type} className="pokemon-info-card__type-card">
+							<div
+								key={type}
+								className="pokemon-info-card__type-card"
+								style={{
+									backgroundImage: `linear-gradient(var(--${type}1), var(--${type}2))`,
+									border: `2px solid var(--${type}3)`,
+								}}
+								// `linear-gradient(to right, var(--${types[0]}1), var(--${types[1]}1)`
+							>
 								{type}
 							</div>
 						))}
 					</div>
 					{/* pokemon's base stats */}
-					<div className="pokemon-info-card__base-stats">
-						{baseStats.map((stat) => {
-							return (
-								<div
-									key={stat.baseStatName}
-									className="pokemon-info-card__base-stat"
-								>{`${stat.baseStatName}: ${stat.value}`}</div>
-							);
-						})}
-					</div>
+					<StatChart baseStats={baseStats} />
 				</div>
 			</div>
 		</div>
