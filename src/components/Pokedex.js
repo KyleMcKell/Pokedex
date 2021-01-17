@@ -38,7 +38,9 @@ export const Pokedex = () => {
 				console.log(err);
 			}
 		};
-		fetchData();
+		if (pokedex.length < POKEMON_IN_DEX) {
+			fetchData();
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
