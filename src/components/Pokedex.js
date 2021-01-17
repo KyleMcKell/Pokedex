@@ -12,7 +12,7 @@ export const Pokedex = () => {
 
 	// amount of pokemon that will be loaded in
 	// total created pokemon is 898, 151 is the Kanto region, which is typically what I end up fetching
-	const POKEMON_IN_DEX = 151;
+	const POKEMON_IN_DEX = 898;
 
 	// fetches pokemon from api
 	useEffect(() => {
