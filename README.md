@@ -20,7 +20,3 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 ## To Do
 
 - Store pokedex to cache after first load
-
-## Where we left off
-
-- Media Queries
