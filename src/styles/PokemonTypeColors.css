@@ -2,19 +2,19 @@
 	/* colors for each typing of pokemon */
 
 	/* background color */
-	--normal1: #ddddca;
+	--normal1: #cfcfb9;
 	--fighting1: #d67873;
 	--flying1: #68eaf3;
-	--poison1: #ce73ce;
+	--poison1: #b858b8;
 	--ground1: #e4ca8a;
 	--rock1: #a5954d;
-	--bug1: #d7e477;
+	--bug1: #c2ce6a;
 	--ghost1: #a292c2;
 	--steel1: #d1d1e0;
 	--fire1: #f5ac78;
 	--water1: #81a1eb;
-	--grass1: #93c57a;
-	--electric1: #e5e757;
+	--grass1: #5ca836;
+	--electric1: #fae078;
 	--psychic1: #fa92b2;
 	--ice1: #b2ecec;
 	--dragon1: #a27dfa;
@@ -25,14 +25,14 @@
 	--normal2: #ebebdd;
 	--fighting2: #e98e8a;
 	--flying2: #98eaf0;
-	--poison2: #e28fe2;
+	--poison2: #ee93ee;
 	--ground2: #f8ebcb;
 	--rock2: #c2b36f;
 	--bug2: #dfe7a0;
 	--ghost2: #c2b8d4;
 	--steel2: #e9e9f3;
 	--fire2: #ecba95;
-	--water2: #a1b8ee;
+	--water2: #abbeeb;
 	--grass2: #b0dd99;
 	--electric2: #f8fa8d;
 	--psychic2: #eea1b8;
@@ -45,14 +45,14 @@
 	--normal3: #9b9b83;
 	--fighting3: #834542;
 	--flying3: #27858d;
-	--poison3: #a85da8;
+	--poison3: #ad41ad;
 	--ground3: #b8aa87;
 	--rock3: #837742;
 	--bug3: #7f863b;
 	--ghost3: #827699;
 	--steel3: #87878a;
 	--fire3: #e07422;
-	--water3: #7185b3;
+	--water3: #51689e;
 	--grass3: #669151;
 	--electric3: #a7a84d;
 	--psychic3: #a55e73;
@@ -68,13 +68,13 @@
 	--poison4: #c05ac0;
 	--ground4: #cfb269;
 	--rock4: #92833e;
-	--bug4: #c2cf5d;
+	--bug4: #a9b83b;
 	--ghost4: #9282b3;
 	--steel4: #a9a9b8;
 	--fire4: #eb985e;
 	--water4: #6686d1;
 	--grass4: #82b966;
-	--electric4: #d1d35d;
+	--electric4: #cab562;
 	--psychic4: #e27495;
 	--ice4: #80dfdf;
 	--dragon4: #906ae7;
