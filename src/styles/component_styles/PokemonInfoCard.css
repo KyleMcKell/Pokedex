@@ -12,13 +12,21 @@
 	height: 50vh;
 }
 
-.pokemon-info-card__sprite {
-	height: 15rem;
+.pokemon-info-card__sprite-container {
+	height: 20rem;
+	width: 20rem;
 	margin-right: 6rem;
-	padding: 1rem;
 	border: 5px var(--nord1) solid;
 	background-image: linear-gradient(#e93636, #fff);
 	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pokemon-info-card__sprite {
+	width: 80%;
+	height: 80%;
 }
 
 .pokemon-info-card__info {

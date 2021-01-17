@@ -9,6 +9,7 @@ const App = () => {
 			<Switch>
 				<Route path="/" exact component={Pokedex} />
 				<Route path="/pokemon/:dexNumber" exact component={PokemonInfo} />
+				<Route path="/pokemon/:name" exact component={PokemonInfo} />
 				<Route path="/" render={() => <div>404 Page Not Found</div>} />
 			</Switch>
 		</BrowserRouter>

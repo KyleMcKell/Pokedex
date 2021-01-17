@@ -57,7 +57,14 @@ export const PokemonInfoCard = ({
 				style={{ backgroundImage: background }}
 			>
 				{/* sprite of pokemon */}
-				<img src={sprite} className={`pokemon-info-card__sprite`} alt={name} />
+				<div className="pokemon-info-card__sprite-container">
+					<img
+						src={sprite}
+						className={`pokemon-info-card__sprite`}
+						alt={name}
+					/>
+				</div>
+
 				{/* all info of pokemon aside from sprite */}
 				<div className="pokemon-info-card__info">
 					{/* dex number and name */}

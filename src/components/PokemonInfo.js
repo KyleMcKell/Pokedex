@@ -9,13 +9,15 @@ export const PokemonInfo = ({ match }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await fetch(
-				`https://pokeapi.co/api/v2/pokemon/${match.params.dexNumber}`
+				match.params.dexNumber
+					? `https://pokeapi.co/api/v2/pokemon/${match.params.dexNumber}`
+					: `https://pokeapi.co/api/v2/pokemon/${match.params.name}`
 			);
 			const json = await response.json();
 			setPokemon(json);
 		};
 		fetchData();
-	}, [match.params.dexNumber]);
+	}, [match.params.dexNumber, match.params.name]);
 
 	if (pokemon) {
 		return (
@@ -25,7 +27,7 @@ export const PokemonInfo = ({ match }) => {
 						dexNumber={pokemon.id} // pokemon's dex number
 						pokemon={pokemon} // pokemon's types, an object
 						name={pokemon.name} // name of the pokemon
-						sprite={pokemon.sprites.front_default} // image of pokemon
+						sprite={pokemon.sprites.other["official-artwork"].front_default} // image of pokemon
 						stats={pokemon.stats} // pokemon stats
 					/>
 				</div>
