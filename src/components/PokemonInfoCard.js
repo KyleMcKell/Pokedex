@@ -16,7 +16,11 @@ export const PokemonInfoCard = ({
 	//sets the background to a gradient of the two types that the pokemon has
 	useEffect(() => {
 		for (const typeNum of pokemon.types) {
-			if (typeNum.type.name != null && types.length < 2) {
+			if (
+				typeNum.type.name != null &&
+				types.length < 2 &&
+				types.indexOf(typeNum.type.name) === -1
+			) {
 				setTypes((types) => types.concat(typeNum.type.name));
 			}
 		}
