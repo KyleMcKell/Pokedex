@@ -28,7 +28,7 @@ export const PokemonInfoCard = ({
 
 	// sets baseStats to hold pokemon's base stats
 	useEffect(() => {
-		const statObj = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"];
+		const statObj = ["HP", "Attack", "Defense", "SpAtk", "SpDef", "Speed"];
 		for (let i = 0; i < statObj.length; i++) {
 			setBaseStats((baseStats) =>
 				baseStats.concat({
@@ -62,7 +62,7 @@ export const PokemonInfoCard = ({
 				<div className="pokemon-info-card__info">
 					{/* dex number and name */}
 					<div className="pokemon-info-card__id">
-						<h1 className="pokemon-info-card__name">{`${dexNumber}: ${name}`}</h1>
+						<div className="pokemon-info-card__name">{`${dexNumber}: ${name}`}</div>
 					</div>
 					{/* pokemon's types */}
 					<div className="pokemon-info-card__types">

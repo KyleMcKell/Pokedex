@@ -24,15 +24,18 @@
 .pokemon-info-card__info {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .pokemon-info-card__id {
 	display: flex;
 	flex-direction: row;
+	color: var(--nord0);
+	font-size: 2.5rem;
+	font-weight: bold;
 }
 
 .pokemon-info-card__name {
-	color: #121212;
 }
 
 .pokemon-info-card__types {

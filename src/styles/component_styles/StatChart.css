@@ -1,0 +1,45 @@
+.stat-chart {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	border: 3px solid var(--nord0);
+	border-radius: 5px;
+	background-color: var(--nord5);
+	padding: 10px 5px;
+	width: 15rem;
+}
+
+.stat-chart__base-stat-name-container {
+	text-align: end;
+	font-weight: bold;
+}
+
+.stat-chart__base-stat-value-container {
+	display: grid;
+}
+
+.stat-chart__base-stat {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.stat-chart__base-stat-value {
+	text-align: start;
+}
+
+.stat-chart__base-stat-line {
+	width: 50px;
+	height: 1rem;
+	background-color: #eb4949;
+}
+
+.stat-chart__base-stat-line-Attack {
+	width: 100px;
+}
+
+.agh-class-name {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+}
