@@ -48,52 +48,43 @@ export const PokemonInfoCard = ({
 		);
 	}, [types]);
 
-	// if the types have been found
-	if (types.length > 0) {
-		return (
-			<div className={`pokemon-info-card`}>
-				{/* Background of card, contains whole card */}
-				<div
-					className={`pokemon-info-card__card`}
-					style={{ backgroundImage: background }}
-				>
-					{/* sprite of pokemon */}
-					<img
-						src={sprite}
-						className={`pokemon-info-card__sprite`}
-						alt={name}
-					/>
-					{/* all info of pokemon aside from sprite */}
-					<div className="pokemon-info-card__info">
-						{/* dex number and name */}
-						<div className="pokemon-info-card__id">
-							<h1 className="pokemon-info-card__name">{name}</h1>
-							<h2>{dexNumber}</h2>
-						</div>
-						{/* pokemon's types */}
-						<div className="pokemon-info-card__types">
-							{types.map((type) => (
-								<div key={type} className="pokemon-info-card__type-card">
-									{type}
-								</div>
-							))}
-						</div>
-						{/* pokemon's base stats */}
-						<div className="pokemon-info-card__base-stats">
-							{baseStats.map((stat) => {
-								return (
-									<div
-										key={stat.baseStatName}
-										className="pokemon-info-card__stat"
-									>{`${stat.baseStatName}: ${stat.value}`}</div>
-								);
-							})}
-						</div>
+	return (
+		<div className={`pokemon-info-card`}>
+			{/* Background of card, contains whole card */}
+			<div
+				className={`pokemon-info-card__card`}
+				style={{ backgroundImage: background }}
+			>
+				{/* sprite of pokemon */}
+				<img src={sprite} className={`pokemon-info-card__sprite`} alt={name} />
+				{/* all info of pokemon aside from sprite */}
+				<div className="pokemon-info-card__info">
+					{/* dex number and name */}
+					<div className="pokemon-info-card__id">
+						<h1 className="pokemon-info-card__name">{name}</h1>
+						<h2>{dexNumber}</h2>
+					</div>
+					{/* pokemon's types */}
+					<div className="pokemon-info-card__types">
+						{types.map((type) => (
+							<div key={type} className="pokemon-info-card__type-card">
+								{type}
+							</div>
+						))}
+					</div>
+					{/* pokemon's base stats */}
+					<div className="pokemon-info-card__base-stats">
+						{baseStats.map((stat) => {
+							return (
+								<div
+									key={stat.baseStatName}
+									className="pokemon-info-card__stat"
+								>{`${stat.baseStatName}: ${stat.value}`}</div>
+							);
+						})}
 					</div>
 				</div>
 			</div>
-		);
-	} else {
-		return <></>;
-	}
+		</div>
+	);
 };
