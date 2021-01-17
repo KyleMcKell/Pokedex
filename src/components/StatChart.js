@@ -7,7 +7,10 @@ export const StatChart = ({ baseStats, types }) => {
 			<div className="stat-chart__base-stat-name-container">
 				{baseStats.map((stat) => {
 					return (
-						<div className="stat-chart__base-stat-name">
+						<div
+							className="stat-chart__base-stat-name"
+							key={`${stat.baseStatName}StatName`}
+						>
 							{`${stat.baseStatName}: `} &nbsp;
 						</div>
 					);
@@ -16,7 +19,10 @@ export const StatChart = ({ baseStats, types }) => {
 			<div className="stat-chart__base-stat-value-container">
 				{baseStats.map((stat) => {
 					return (
-						<div key={stat.baseStatName} className="stat-chart__base-stat">
+						<div
+							key={`${stat.baseStatName}StatValue`}
+							className="stat-chart__base-stat"
+						>
 							<div className="stat-chart__base-stat-value">
 								{stat.value < 100 ? (
 									<span>{`${stat.value}`} &nbsp;</span>
