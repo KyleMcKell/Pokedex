@@ -81,7 +81,7 @@ export const PokemonInfoCard = ({
 						))}
 					</div>
 					{/* pokemon's base stats */}
-					<StatChart baseStats={baseStats} />
+					<StatChart baseStats={baseStats} types={types} />
 				</div>
 			</div>
 		</div>

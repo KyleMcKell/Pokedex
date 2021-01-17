@@ -1,10 +1,12 @@
 :root {
 	/* colors for each typing of pokemon */
+
+	/* background color */
 	--normal1: #ddddca;
 	--fighting1: #d67873;
 	--flying1: #68eaf3;
 	--poison1: #ce73ce;
-	--ground1: #fce6ac;
+	--ground1: #e4ca8a;
 	--rock1: #a5954d;
 	--bug1: #d7e477;
 	--ghost1: #a292c2;
@@ -19,6 +21,7 @@
 	--dark1: #a29288;
 	--fairy1: #f4bdc9;
 
+	/* background of type icon */
 	--normal2: #ebebdd;
 	--fighting2: #e98e8a;
 	--flying2: #98eaf0;
@@ -38,6 +41,7 @@
 	--dark2: #b9aca4;
 	--fairy2: #ebc5cd;
 
+	/* border of type icon */
 	--normal3: #9b9b83;
 	--fighting3: #834542;
 	--flying3: #27858d;
@@ -56,4 +60,24 @@
 	--dragon3: #7158ad;
 	--dark3: #4b403a;
 	--fairy3: #94616c;
+
+	/* color of stat bar */
+	--normal4: #9b9b8b;
+	--fighting4: #c26f6b;
+	--flying4: #5bd3db;
+	--poison4: #c05ac0;
+	--ground4: #cfb269;
+	--rock4: #92833e;
+	--bug4: #c2cf5d;
+	--ghost4: #9282b3;
+	--steel4: #a9a9b8;
+	--fire4: #eb985e;
+	--water4: #6686d1;
+	--grass4: #82b966;
+	--electric4: #d1d35d;
+	--psychic4: #e27495;
+	--ice4: #80dfdf;
+	--dragon4: #906ae7;
+	--dark4: #887367;
+	--fairy4: #d393a1;
 }

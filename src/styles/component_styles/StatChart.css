@@ -4,7 +4,7 @@
 	justify-content: left;
 	border: 3px solid var(--nord0);
 	border-radius: 5px;
-	background-color: var(--nord5);
+	background-color: var(--nord4);
 	padding: 10px 5px;
 	width: 15rem;
 }
@@ -14,32 +14,21 @@
 	font-weight: bold;
 }
 
-.stat-chart__base-stat-value-container {
-	display: grid;
-}
-
 .stat-chart__base-stat {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	display: grid;
+	grid-template-areas: "value bar";
+	gap: 0.6rem;
+	grid-template-columns: 1fr 5fr;
 }
 
 .stat-chart__base-stat-value {
-	text-align: start;
+	grid-area: value;
 }
 
 .stat-chart__base-stat-line {
 	width: 50px;
+	grid-area: bar;
 	height: 1rem;
-	background-color: #eb4949;
-}
-
-.stat-chart__base-stat-line-Attack {
-	width: 100px;
-}
-
-.agh-class-name {
 	display: flex;
 	justify-content: flex-start;
-	flex-direction: row;
 }
