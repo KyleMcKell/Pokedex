@@ -6,16 +6,13 @@
 	border: 5px solid var(--nord3);
 	border-radius: 10px;
 	display: flex;
-	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
-	height: 50vh;
 }
 
 .pokemon-info-card__sprite-container {
 	height: 20rem;
 	width: 20rem;
-	margin-right: 6rem;
 	border: 5px var(--nord1) solid;
 	background-image: linear-gradient(#e93636, #fff);
 	border-radius: 50%;
@@ -53,4 +50,20 @@
 	padding: 0.5rem 1rem;
 	border-radius: 10px;
 	font-weight: bold;
+}
+
+/* small screens */
+@media only screen and (max-width: 900px) {
+	.pokemon-info-card__card {
+		flex-direction: column;
+		height: 80vh;
+	}
+}
+
+/* large screens */
+@media only screen and (min-width: 900px) {
+	.pokemon-info-card__card {
+		flex-direction: row;
+		height: 50vh;
+	}
 }
