@@ -8,6 +8,10 @@ Created with create-react-app and https://pokeapi.co/
 
 If you’re on your journey to be a Pokémon master, nothing is going to be more useful than a Pokédex that allows you to identify and learn more about each Pokémon.
 
+## How to Use
+
+Fork project from github onto system, install node module dependencies with npm install, npm start to begin localhost server
+
 ## Purpose of Project
 
 - Interacting with an API with React Hooks
