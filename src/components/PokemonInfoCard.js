@@ -68,9 +68,7 @@ export const PokemonInfoCard = ({
 				{/* all info of pokemon aside from sprite */}
 				<div className="pokemon-info-card__info">
 					{/* dex number and name */}
-					<div className="pokemon-info-card__id">
-						<div className="pokemon-info-card__name">{`${dexNumber}: ${name}`}</div>
-					</div>
+					<div className="pokemon-info-card__id">{`${dexNumber}: ${name}`}</div>
 					{/* pokemon's types */}
 					<div className="pokemon-info-card__types">
 						{types.map((type) => (
