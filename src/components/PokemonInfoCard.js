@@ -78,7 +78,7 @@ export const PokemonInfoCard = ({
 							return (
 								<div
 									key={stat.baseStatName}
-									className="pokemon-info-card__stat"
+									className="pokemon-info-card__base-stat"
 								>{`${stat.baseStatName}: ${stat.value}`}</div>
 							);
 						})}
