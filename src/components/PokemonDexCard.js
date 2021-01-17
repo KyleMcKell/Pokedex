@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/component_styles/PokemonDexCard.css";
-import "../styles/component_styles/PokemonTypeColors.css";
 
 // returns a pokemon card with identifiers for each pokemon
 export const PokemonDexCard = ({ name, types, dexNumber, sprite }) => {

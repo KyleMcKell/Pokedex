@@ -1,6 +1,3 @@
-@import "../Colors.css";
-@import "./PokemonTypeColors.css";
-
 .pokemon {
 	display: inline-block;
 }

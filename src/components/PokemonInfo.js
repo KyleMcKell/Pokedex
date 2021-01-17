@@ -19,8 +19,8 @@ export const PokemonInfo = ({ match }) => {
 
 	if (pokemon) {
 		return (
-			<div className="pokemon-info__container">
-				<div className="pokemon-info__card">
+			<div className="pokemon-info">
+				<div className="pokemon-info__container">
 					<PokemonInfoCard
 						dexNumber={pokemon.id} // pokemon's dex number
 						pokemon={pokemon} // pokemon's types, an object

@@ -1,7 +1,4 @@
-@import "../Colors.css";
-@import "./PokemonTypeColors.css";
-
-.pokemon-info__container {
+.pokemon-info {
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -10,9 +7,8 @@
 	margin-top: 10vh;
 }
 
-.pokemon-info__name {
-	color: var(--nord6);
-	text-transform: capitalize;
+.pokemon-info__container {
+	width: 80vw;
 }
 
 .pokemon-info__link {

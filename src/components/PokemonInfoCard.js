@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "../styles/component_styles/PokemonTypeColors.css";
 import "../styles/component_styles/PokemonInfoCard.css";
 
 export const PokemonInfoCard = ({
@@ -12,43 +10,67 @@ export const PokemonInfoCard = ({
 }) => {
 	const [background, setBackground] = useState("");
 	const [types, setTypes] = useState([]);
+	const [baseStats, setBaseStats] = useState([]);
 
-	//sets the background to a gradient of the two types that the pokemon has
+	//sets types to have the pokemon's types
 	useEffect(() => {
 		for (const typeNum of pokemon.types) {
 			if (
 				typeNum.type.name != null &&
-				types.length < 2 &&
 				types.indexOf(typeNum.type.name) === -1
 			) {
 				setTypes((types) => types.concat(typeNum.type.name));
 			}
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	// sets baseStats to hold pokemon's base stats
+	useEffect(() => {
+		const statObj = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"];
+		for (let i = 0; i < statObj.length; i++) {
+			setBaseStats((baseStats) =>
+				baseStats.concat({
+					baseStatName: statObj[i],
+					value: stats[i].base_stat,
+				})
+			);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	// sets the background
+	useEffect(() => {
 		setBackground(
 			types.length > 1
 				? `linear-gradient(to right, var(--${types[0]}1), var(--${types[1]}1)`
 				: `linear-gradient(var(--${types[0]}1), var(--${types[0]}1)`
 		);
-	}, [types, pokemon.types]);
+	}, [types]);
 
+	// if the types have been found
 	if (types.length > 0) {
 		return (
-			<div className={`pokemon-info-card__container`}>
-				{/* Routes to  */}
+			<div className={`pokemon-info-card`}>
+				{/* Background of card, contains whole card */}
 				<div
 					className={`pokemon-info-card__card`}
 					style={{ backgroundImage: background }}
 				>
+					{/* sprite of pokemon */}
 					<img
 						src={sprite}
 						className={`pokemon-info-card__sprite`}
 						alt={name}
 					/>
+					{/* all info of pokemon aside from sprite */}
 					<div className="pokemon-info-card__info">
+						{/* dex number and name */}
 						<div className="pokemon-info-card__id">
 							<h1 className="pokemon-info-card__name">{name}</h1>
 							<h2>{dexNumber}</h2>
 						</div>
+						{/* pokemon's types */}
 						<div className="pokemon-info-card__types">
 							{types.map((type) => (
 								<div key={type} className="pokemon-info-card__type-card">
@@ -56,13 +78,22 @@ export const PokemonInfoCard = ({
 								</div>
 							))}
 						</div>
+						{/* pokemon's base stats */}
+						<div className="pokemon-info-card__base-stats">
+							{baseStats.map((stat) => {
+								return (
+									<div
+										key={stat.baseStatName}
+										className="pokemon-info-card__stat"
+									>{`${stat.baseStatName}: ${stat.value}`}</div>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</div>
 		);
 	} else {
-		return (
-			<Link to={`/pokemon/${dexNumber}`} className="pokemon-info-card__link" />
-		);
+		return <></>;
 	}
 };
