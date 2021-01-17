@@ -19,9 +19,9 @@ If you’re on your journey to be a Pokémon master, nothing is going to be more
 
 ## To Do
 
-- Create page per Pokemon
 - Add Pokemon stats
 
 ## Where we left off
 
-- Creating ID Page for each pokemon
+- Making the bars react to how high a stat is
+- Media Queries
