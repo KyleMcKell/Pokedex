@@ -42,21 +42,29 @@ export const Pokedex = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return (
-		<div className="container">
-			<h1 className="title">Pokedex</h1>
-			<div className="pokedex">
-				{pokedex.map((pokemon) => (
-					<PokemonDexCard
-						dexNumber={pokemon.id} // pokemon's dex number
-						key={pokemon.id} // key for React, each dex number is unique
-						types={pokemon.types} // pokemon's types, an object
-						name={pokemon.name} // name of the pokemon
-						sprite={pokemon.sprites.front_default} // image of pokemon
-					/>
-				))}
+	if (pokedex.length === 0) {
+		return (
+			<div className="container">
+				<h1 className="title">Pokedex</h1>
+				<Loading isLoading={isLoading} />
 			</div>
-			<Loading isLoading={isLoading} />
-		</div>
-	);
+		);
+	} else {
+		return (
+			<div className="container">
+				<h1 className="title">Pokedex</h1>
+				<div className="pokedex">
+					{pokedex.map((pokemon) => (
+						<PokemonDexCard
+							dexNumber={pokemon.id} // pokemon's dex number
+							key={pokemon.id} // key for React, each dex number is unique
+							types={pokemon.types} // pokemon's types, an object
+							name={pokemon.name} // name of the pokemon
+							sprite={pokemon.sprites.front_default} // image of pokemon
+						/>
+					))}
+				</div>
+			</div>
+		);
+	}
 };

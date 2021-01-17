@@ -6,7 +6,7 @@ export const Loading = ({ isLoading }) => {
 	if (isLoading) {
 		return (
 			<div className="loading">
-				<h2 className="loading__loadingText">Fetching Pokemon Data</h2>
+				<h2 className="loading__loadingText">Loading...</h2>
 			</div>
 		);
 	} else {

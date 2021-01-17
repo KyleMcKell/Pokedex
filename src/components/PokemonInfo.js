@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { PokemonDexCard } from "./PokemonDexCard";
+import { PokemonInfoCard } from "./PokemonInfoCard";
 import { Link } from "react-router-dom";
 import "../styles/component_styles/PokemonInfo.css";
 
@@ -19,14 +19,17 @@ export const PokemonInfo = ({ match }) => {
 
 	if (pokemon) {
 		return (
-			<div class="">
-				<PokemonDexCard
-					dexNumber={pokemon.id} // pokemon's dex number
-					types={pokemon.types} // pokemon's types, an object
-					name={pokemon.name} // name of the pokemon
-					sprite={pokemon.sprites.front_default} // image of pokemon
-				/>
-				<Link to={`/`} className="pokemon-info--link">
+			<div className="pokemon-info__container">
+				<div className="pokemon-info__card">
+					<PokemonInfoCard
+						dexNumber={pokemon.id} // pokemon's dex number
+						pokemon={pokemon} // pokemon's types, an object
+						name={pokemon.name} // name of the pokemon
+						sprite={pokemon.sprites.front_default} // image of pokemon
+						stats={pokemon.stats} // pokemon stats
+					/>
+				</div>
+				<Link to={`/`} className="pokemon-info__link">
 					Go home
 				</Link>
 			</div>

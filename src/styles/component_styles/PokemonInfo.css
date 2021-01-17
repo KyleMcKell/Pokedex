@@ -1,0 +1,22 @@
+@import "../Colors.css";
+@import "./PokemonTypeColors.css";
+
+.pokemon-info__container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	margin-top: 10vh;
+}
+
+.pokemon-info__name {
+	color: var(--nord6);
+	text-transform: capitalize;
+}
+
+.pokemon-info__link {
+	color: var(--nord6);
+	font-weight: bold;
+	font-size: 1.5rem;
+}
