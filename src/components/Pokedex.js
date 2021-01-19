@@ -14,7 +14,7 @@ export const Pokedex = () => {
 
 	// amount of pokemon that will be loaded in
 	// total created pokemon is 898, 151 is the Kanto region, which is typically what I end up fetching
-	const POKEMON_IN_DEX = 503;
+	const POKEMON_IN_DEX = 898;
 
 	// fetches pokemon from api
 	useEffect(() => {
@@ -39,6 +39,9 @@ export const Pokedex = () => {
 				setIsLoading(false);
 			} catch (err) {
 				console.log(err);
+				alert(
+					"There was an error with the database, please try again later.\nYou may search a specific pokemon by adding /pokemon/# where # is their dex number to the url"
+				);
 			}
 		};
 		if (pokedex.length < POKEMON_IN_DEX) {
