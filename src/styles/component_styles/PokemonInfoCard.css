@@ -87,3 +87,10 @@
 		width: 20rem;
 	}
 }
+
+@media only screen and (max-width: 600px) {
+	.pokemon-info-card__sprite-container {
+		height: 10rem;
+		width: 10rem;
+	}
+}
