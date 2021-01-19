@@ -69,7 +69,7 @@
 }
 
 /* shrinking height */
-/* @media only screen and (max-height: 700px) {
+@media only screen and (max-height: 700px) {
 	.pokemon-info-card__sprite-container {
 		height: 12rem;
 		width: 12rem;
@@ -78,15 +78,15 @@
 		height: 80vh;
 		flex-direction: row;
 	}
-} */
+}
 
 /* growing height */
-/* @media only screen and (min-height: 700px) {
+@media only screen and (min-height: 700px) {
 	.pokemon-info-card__sprite-container {
 		height: 20rem;
 		width: 20rem;
 	}
-} */
+}
 
 @media only screen and (max-width: 600px) {
 	.pokemon-info-card__sprite-container {
