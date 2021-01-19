@@ -26,7 +26,6 @@
 }
 
 .stat-chart__base-stat-line {
-	width: 50px;
 	grid-area: bar;
 	height: 1rem;
 	display: flex;
@@ -34,16 +33,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.stat-chart__base-stat-line {
-		display: none;
-	}
-
-	.stat-chart__base-stat {
-		grid-template-columns: 1fr;
-		grid-template-areas: "value";
-	}
-
 	.stat-chart {
-		width: 6rem;
+		width: 100%;
+		justify-content: center;
 	}
 }

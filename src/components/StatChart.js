@@ -33,7 +33,9 @@ export const StatChart = ({ baseStats, types }) => {
 							<div
 								className={`stat-chart__base-stat-line`}
 								style={{
-									width: `${stat.value <= 135 ? stat.value : 135}px`,
+									width: `${
+										stat.value <= 150 ? (stat.value * 100) / 150 : 100
+									}%`,
 									backgroundColor: `var(--${types[0]}4`,
 								}}
 							/>
