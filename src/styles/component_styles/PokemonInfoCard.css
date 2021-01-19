@@ -9,7 +9,7 @@
 	justify-content: space-evenly;
 	align-items: center;
 	flex-direction: row;
-	height: 50vh;
+	height: 80vh;
 }
 
 .pokemon-info-card__sprite-container {
@@ -38,7 +38,7 @@
 	display: flex;
 	flex-direction: row;
 	color: var(--nord0);
-	font-size: 2.5rem;
+	font-size: 3rem;
 	font-weight: bold;
 }
 
@@ -54,8 +54,33 @@
 	font-weight: bold;
 }
 
-/* portrait phones */
-@media only screen and (orientation: portrait) {
+/* portrait larger screen */
+@media only screen and (orientation: portrait) and (max-height: 1300px) {
+	.pokemon-info-card__sprite-container {
+		height: 15rem;
+		width: 15rem;
+	}
+
+	.pokemon-info-card__card {
+		flex-direction: column;
+		height: 80vh;
+	}
+
+	.pokemon-info-card__id {
+		display: flex;
+		flex-direction: row;
+		color: var(--nord0);
+		font-weight: bold;
+	}
+
+	.pokemon-info-card__type-card {
+		border-radius: 10px;
+		font-weight: bold;
+	}
+}
+
+/* portrait phone screen */
+@media only screen and (orientation: portrait) and (max-height: 850px) {
 	.pokemon-info-card__sprite-container {
 		height: 10rem;
 		width: 10rem;
@@ -81,11 +106,11 @@
 	}
 }
 
-/* landscape phones */
-@media only screen and (orientation: landscape) {
+/* landscape medium screen */
+@media only screen and (orientation: landscape) and (max-width: 1300px) {
 	.pokemon-info-card__sprite-container {
-		height: 200px;
-		width: 200px;
+		height: 15rem;
+		width: 15rem;
 	}
 	.pokemon-info-card__card {
 		height: 70vh;
@@ -96,7 +121,7 @@
 		display: flex;
 		flex-direction: row;
 		color: var(--nord0);
-		font-size: 1.5rem;
+		font-size: 2rem;
 		font-weight: bold;
 	}
 
@@ -104,5 +129,13 @@
 		margin: 2px;
 		border-radius: 10px;
 		font-weight: bold;
+	}
+}
+
+/* landscape small screen */
+@media only screen and (orientation: landscape) and (max-width: 850px) {
+	.pokemon-info-card__sprite-container {
+		height: 12rem;
+		width: 12rem;
 	}
 }

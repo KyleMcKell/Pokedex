@@ -6,7 +6,8 @@
 	border-radius: 5px;
 	background-color: var(--nord4);
 	padding: 10px 5px;
-	width: 15rem;
+	width: 100%;
+	font-size: 20px;
 }
 
 .stat-chart__base-stat-name-container {
@@ -19,6 +20,7 @@
 	grid-template-areas: "value bar";
 	gap: 0.6rem;
 	grid-template-columns: 1fr 5fr;
+	align-items: center;
 }
 
 .stat-chart__base-stat-value {
@@ -32,7 +34,8 @@
 	justify-content: flex-start;
 }
 
-@media only screen and (orientation: portrait) {
+/* portrait larger screen */
+@media only screen and (orientation: portrait) and (max-height: 1300px) {
 	.stat-chart {
 		width: 100%;
 		padding: 5px 2px;
@@ -41,9 +44,26 @@
 	}
 }
 
-@media only screen and (orientation: landscape) {
+/* portrait phone screen */
+@media only screen and (orientation: portrait) and (max-height: 850px) {
+	.stat-chart {
+		width: 100%;
+		padding: 5px 2px;
+		justify-content: center;
+		margin-top: 1rem;
+		font-size: 1rem;
+	}
+}
+
+/* landscape medium screen */
+@media only screen and (orientation: landscape) and (max-width: 1300px) {
 	.stat-chart {
 		width: 100%;
 		height: 100%;
+		font-size: 1rem;
 	}
+}
+
+/* landscape small screen */
+@media only screen and (orientation: landscape) and (max-width: 850px) {
 }
