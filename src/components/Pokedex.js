@@ -40,7 +40,9 @@ export const Pokedex = () => {
 			} catch (err) {
 				console.log(err);
 				alert(
-					"There was an error with the database, please try again later.\nYou may search a specific pokemon by adding /pokemon/# where # is their dex number to the url"
+					`There was an error with the database, please try again later.
+					\nYou may search a specific pokemon by adding /pokemon/# where # is their dex number to the url
+					\nYou may also search by using their name in place of the dex number`
 				);
 			}
 		};
