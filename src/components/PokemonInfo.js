@@ -31,7 +31,7 @@ export const PokemonInfo = ({ match }) => {
 						stats={pokemon.stats} // pokemon stats
 					/>
 				</div>
-				<Link to={`/`} className="pokemon-info__link">
+				<Link to={`/`} className="pokemon-info__go-home">
 					Go home
 				</Link>
 			</div>
