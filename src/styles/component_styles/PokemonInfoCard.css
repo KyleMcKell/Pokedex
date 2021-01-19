@@ -55,7 +55,7 @@
 }
 
 /* portrait phones */
-@media only screen and (max-width: 600px) {
+@media only screen and (orientation: portrait) {
 	.pokemon-info-card__sprite-container {
 		height: 10rem;
 		width: 10rem;

@@ -32,7 +32,7 @@
 	justify-content: flex-start;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (orientation: portrait) {
 	.stat-chart {
 		width: 100%;
 		padding: 5px 2px;
