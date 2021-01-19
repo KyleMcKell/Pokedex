@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 const App = () => {
 	return (
-		<BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
+		<BrowserRouter basename="/Pokedex">
 			<Switch>
 				<Route path="/" exact component={Pokedex} />
 				<Route path="/pokemon/:dexNumber" exact component={PokemonInfo} />
