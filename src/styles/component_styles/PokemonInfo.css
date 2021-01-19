@@ -16,3 +16,9 @@
 	font-weight: bold;
 	font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 600px) {
+	.pokemon-info {
+		margin-top: 5vh;
+	}
+}

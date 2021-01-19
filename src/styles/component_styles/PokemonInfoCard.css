@@ -63,15 +63,29 @@
 
 	.pokemon-info-card__card {
 		flex-direction: column;
-		height: 75vh;
+		height: 80vh;
+	}
+
+	.pokemon-info-card__id {
+		display: flex;
+		flex-direction: row;
+		color: var(--nord0);
+		font-size: 2rem;
+		font-weight: bold;
+	}
+
+	.pokemon-info-card__type-card {
+		margin: 2px;
+		border-radius: 10px;
+		font-weight: bold;
 	}
 }
 
 /* landscape phones */
-@media only screen and (max-height: 600px) {
+@media only screen and (orientation: landscape) {
 	.pokemon-info-card__sprite-container {
-		height: 100px;
-		width: 100px;
+		height: 200px;
+		width: 200px;
 	}
 	.pokemon-info-card__card {
 		height: 70vh;
@@ -88,9 +102,7 @@
 
 	.pokemon-info-card__type-card {
 		margin: 2px;
-		padding: 0.2rem 0.5rem;
 		border-radius: 10px;
 		font-weight: bold;
-		font-size: 12px;
 	}
 }
