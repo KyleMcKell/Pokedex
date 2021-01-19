@@ -68,7 +68,7 @@
 }
 
 /* landscape phones */
-@media only screen and (max-height: 321px) and (max-height: 480px) {
+@media only screen and (max-height: 600px) {
 	.pokemon-info-card__sprite-container {
 		height: 100px;
 		width: 100px;
