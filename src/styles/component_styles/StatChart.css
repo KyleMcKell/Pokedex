@@ -34,7 +34,7 @@
 	justify-content: flex-start;
 }
 
-/* portrait `medium screen */
+/* portrait medium screen */
 @media only screen and (orientation: portrait) and (max-height: 1300px) {
 	.stat-chart {
 		padding: 5px 2px;
