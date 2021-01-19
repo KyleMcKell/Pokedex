@@ -2,17 +2,19 @@ import "../styles/component_styles/Pokedex.css";
 import { PokemonDexCard } from "./PokemonDexCard";
 import { Loading } from "./Loading";
 import { useEffect, useState } from "react";
+import { SearchBar } from "./SearchBar";
 
 // maps an array of pokemon
 export const Pokedex = () => {
 	// holds pokemon data
 	const [pokedex, setPokedex] = useState([]);
+	const [fulldex, setFulldex] = useState([]);
 	// if true, instead of pokedex showing, shows a loading message
 	const [isLoading, setIsLoading] = useState(false);
 
 	// amount of pokemon that will be loaded in
 	// total created pokemon is 898, 151 is the Kanto region, which is typically what I end up fetching
-	const POKEMON_IN_DEX = 898;
+	const POKEMON_IN_DEX = 503;
 
 	// fetches pokemon from api
 	useEffect(() => {
@@ -32,6 +34,7 @@ export const Pokedex = () => {
 				);
 				// sets the pokedex to the data
 				setPokedex((pokedex) => pokedex.concat(data));
+				setFulldex((fulldex) => fulldex.concat(data));
 				// removes loading screen
 				setIsLoading(false);
 			} catch (err) {
@@ -44,6 +47,26 @@ export const Pokedex = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	const searchOnChange = (searchTerm) => {
+		console.log("hi");
+		setPokedex(pokedex.filter((_) => null));
+		setPokedex((pokedex) => pokedex.concat(fulldex));
+		const pokeArr = pokedex.filter((pokemon) => {
+			if (searchTerm === "") {
+				return pokemon;
+			} else if (
+				pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+			) {
+				return pokemon;
+			} else if (pokemon.id.toString().includes(searchTerm)) {
+				return pokemon;
+			} else {
+				return null;
+			}
+		});
+		setPokedex(pokeArr);
+	};
+
 	if (pokedex.length === 0) {
 		return (
 			<div className="container">
@@ -55,6 +78,7 @@ export const Pokedex = () => {
 		return (
 			<div className="container">
 				<h1 className="title">Pokedex</h1>
+				<SearchBar searchOnChange={searchOnChange} />
 				<div className="pokedex">
 					{pokedex.map((pokemon) => (
 						<PokemonDexCard

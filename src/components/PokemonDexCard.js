@@ -6,6 +6,20 @@ import "../styles/component_styles/PokemonDexCard.css";
 export const PokemonDexCard = ({ name, types, dexNumber, sprite }) => {
 	const [background, setBackground] = useState("");
 
+	const fixName = () => {
+		if (name.indexOf("-") === -1) {
+			return name;
+		} else {
+			const splitName = name.split("-");
+			const firstLetter = splitName[1].split("")[0];
+			const newName = splitName[0] + "-" + firstLetter.toUpperCase();
+			return newName;
+		}
+	};
+
+	// const changedName = `${name.split("")[0]}`;
+	const changedName = fixName();
+
 	//sets the background to a gradient of the two types that the pokemon has
 	useEffect(() => {
 		const typeArr = [];
@@ -34,7 +48,7 @@ export const PokemonDexCard = ({ name, types, dexNumber, sprite }) => {
 					<div className="pokemon__data">
 						<div className="pokemon__id">{`${dexNumber}`}</div>
 						<hr className="pokemon__hr" />
-						<div className="pokemon__name">{`${name.split("-")[0]}`}</div>
+						<div className="pokemon__name">{changedName}</div>
 					</div>
 				</div>
 			</Link>

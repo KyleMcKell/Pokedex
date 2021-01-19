@@ -49,6 +49,19 @@ export const PokemonInfoCard = ({
 		);
 	}, [types]);
 
+	const fixName = () => {
+		if (name.indexOf("-") === -1) {
+			return name;
+		} else {
+			const splitName = name.split("-");
+			const firstLetter = splitName[1].split("")[0];
+			const newName = splitName[0] + "-" + firstLetter.toUpperCase();
+			return newName;
+		}
+	};
+
+	const changedName = fixName();
+
 	return (
 		<div className={`pokemon-info-card`}>
 			{/* Background of card, contains whole card */}
@@ -68,9 +81,7 @@ export const PokemonInfoCard = ({
 				{/* all info of pokemon aside from sprite */}
 				<div className="pokemon-info-card__info">
 					{/* dex number and name */}
-					<div className="pokemon-info-card__id">{`${dexNumber}: ${`${
-						name.split("-")[0]
-					}`}`}</div>
+					<div className="pokemon-info-card__id">{`${dexNumber}: ${changedName}`}</div>
 					{/* pokemon's types */}
 					<div className="pokemon-info-card__types">
 						{types.map((type) => (
