@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/component_styles/PokemonInfoCard.css";
 import { StatChart } from "./StatChart";
+import { Namer } from "./Namer";
 
 export const PokemonInfoCard = ({
 	pokemon,
@@ -49,18 +50,7 @@ export const PokemonInfoCard = ({
 		);
 	}, [types]);
 
-	const fixName = () => {
-		if (name.indexOf("-") === -1) {
-			return name;
-		} else {
-			const splitName = name.split("-");
-			const firstLetter = splitName[1].split("")[0];
-			const newName = `${splitName[0]}-${firstLetter}`;
-			return newName;
-		}
-	};
-
-	const changedName = fixName();
+	const changedName = Namer(name);
 
 	return (
 		<div className={`pokemon-info-card`}>

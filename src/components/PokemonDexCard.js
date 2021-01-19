@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/component_styles/PokemonDexCard.css";
+import { Namer } from "./Namer";
 
 // returns a pokemon card with identifiers for each pokemon
 export const PokemonDexCard = ({ name, types, dexNumber, sprite }) => {
 	const [background, setBackground] = useState("");
 
-	const fixName = () => {
-		if (name.indexOf("-") === -1) {
-			return name;
-		} else {
-			const splitName = name.split("-");
-			const firstLetter = splitName[1].split("")[0];
-			const newName = `${splitName[0]}-${firstLetter}`;
-			return newName;
-		}
-	};
+	// const fixName = () => {
+	// 	if (name.indexOf("-") === -1) {
+	// 		return name;
+	// 	} else {
+	// 		const splitName = name.split("-");
+	// 		const firstLetter = splitName[1].split("")[0];
+	// 		const newName = `${splitName[0]}-${firstLetter}`;
+	// 		return newName;
+	// 	}
+	// };
 
 	// const changedName = `${name.split("")[0]}`;
-	const changedName = fixName();
+	const changedName = Namer(name);
 
 	//sets the background to a gradient of the two types that the pokemon has
 	useEffect(() => {

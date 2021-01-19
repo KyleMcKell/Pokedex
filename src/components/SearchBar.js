@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/component_styles/SearchBar.css";
 
 export const SearchBar = ({ searchOnChange }) => {
 	return (
@@ -8,6 +9,7 @@ export const SearchBar = ({ searchOnChange }) => {
 			placeholder="Search..."
 			id=""
 			onChange={(e) => searchOnChange(e.target.value)}
+			className="search-bar"
 		/>
 	);
 };
