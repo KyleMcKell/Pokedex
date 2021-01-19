@@ -12,7 +12,7 @@ export const PokemonDexCard = ({ name, types, dexNumber, sprite }) => {
 		} else {
 			const splitName = name.split("-");
 			const firstLetter = splitName[1].split("")[0];
-			const newName = splitName[0] + "-" + firstLetter.toUpperCase();
+			const newName = `${splitName[0]}-${firstLetter}`;
 			return newName;
 		}
 	};
