@@ -1,3 +1,4 @@
+// Handles weird names in pokemon that are stored differently in the api
 export const Namer = (name) => {
 	if (name.indexOf("-") === -1) {
 		return name;

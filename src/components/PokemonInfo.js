@@ -6,6 +6,7 @@ import "../styles/component_styles/PokemonInfo.css";
 export const PokemonInfo = ({ match }) => {
 	const [pokemon, setPokemon] = useState();
 
+	// fetch the specific pokemon
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await fetch(

@@ -53,6 +53,7 @@ export const Pokedex = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+	// searchbar function
 	const searchOnChange = (searchTerm) => {
 		const pokeArr = fulldex.filter((pokemon) => {
 			if (searchTerm === "") {
