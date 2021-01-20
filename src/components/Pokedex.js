@@ -42,7 +42,8 @@ export const Pokedex = () => {
 				alert(
 					`There was an error with the database, please try again later.
 					\nYou may search a specific pokemon by adding /pokemon/# where # is their dex number to the url
-					\nYou may also search by using their name in place of the dex number`
+					\nYou may also search by using their name in place of the dex number
+					\ni.e. https://kylemckell.github.io/Pokedex/pokemon/1 or https://kylemckell.github.io/Pokedex/pokemon/bulbasaur to get bulbasaur`
 				);
 			}
 		};
