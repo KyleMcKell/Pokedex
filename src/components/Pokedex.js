@@ -54,10 +54,7 @@ export const Pokedex = () => {
 	}, []);
 
 	const searchOnChange = (searchTerm) => {
-		console.log("hi");
-		setPokedex(pokedex.filter((_) => null));
-		setPokedex((pokedex) => pokedex.concat(fulldex));
-		const pokeArr = pokedex.filter((pokemon) => {
+		const pokeArr = fulldex.filter((pokemon) => {
 			if (searchTerm === "") {
 				return pokemon;
 			} else if (
@@ -73,7 +70,7 @@ export const Pokedex = () => {
 		setPokedex(pokeArr);
 	};
 
-	if (pokedex.length === 0) {
+	if (fulldex.length === 0) {
 		return (
 			<div className="container">
 				<h1 className="title">Pokedex</h1>

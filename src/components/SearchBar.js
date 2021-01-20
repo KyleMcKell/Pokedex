@@ -6,7 +6,7 @@ export const SearchBar = ({ searchOnChange }) => {
 		<input
 			type="text"
 			name=""
-			placeholder="Search..."
+			placeholder="Dex Number or Name"
 			id=""
 			onChange={(e) => searchOnChange(e.target.value)}
 			className="search-bar"
