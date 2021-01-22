@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/component_styles/PokemonDexCard.css";
-import { Namer } from "./Namer";
+import { nameHelper } from "./nameHelper";
 
 // returns a pokemon card with identifiers for each pokemon
 export const PokemonDexCard = ({ name, types, dexNumber, sprite }) => {
 	const [background, setBackground] = useState("");
 
-	const changedName = Namer(name);
+	const changedName = nameHelper(name);
 
 	//sets the background to a gradient of the two types that the pokemon has
 	useEffect(() => {

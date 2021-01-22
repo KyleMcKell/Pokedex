@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/component_styles/PokemonInfoCard.css";
 import { StatChart } from "./StatChart";
-import { Namer } from "./Namer";
+import { nameHelper } from "./nameHelper";
 
 export const PokemonInfoCard = ({
 	pokemon,
@@ -50,7 +50,7 @@ export const PokemonInfoCard = ({
 		);
 	}, [types]);
 
-	const changedName = Namer(name);
+	const changedName = nameHelper(name);
 
 	return (
 		<div className={`pokemon-info-card`}>
