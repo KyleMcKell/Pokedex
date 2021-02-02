@@ -24,7 +24,6 @@ export const Pokedex = () => {
 			// makes POKEMON_IN_DEX length array filled with urls that have each pokemon associated
 			const pokeArr = new Array(POKEMON_IN_DEX).fill("").map((_, index) => {
 				return `https://pokeapi.co/api/v2/pokemon/${index + 1}`;
-				``;
 			});
 			try {
 				// fetches a response for each pokemon url
